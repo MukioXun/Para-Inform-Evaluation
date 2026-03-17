@@ -1,0 +1,11 @@
+# Ignore the build directory
+api_captioner/
+Omni-Captioner/
+task_inf.md
+
+# Python缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
