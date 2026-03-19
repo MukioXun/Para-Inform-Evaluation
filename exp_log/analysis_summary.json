@@ -1,0 +1,33 @@
+{
+  "success_count": 100,
+  "total_count": 100,
+  "emotions": {
+    "neutral": 68,
+    "happy": 23,
+    "surprised": 4,
+    "angry": 5
+  },
+  "events": {
+    "Speech": 14,
+    "Telephone busy signal": 8,
+    "Pigeon, dove": 6,
+    "Paddle steamer, paddle wheeler": 6,
+    "Cricket": 4,
+    "Child singing": 4,
+    "Laugh": 4,
+    "Tambourine": 4,
+    "Telephone ring": 4,
+    "Motorcycle": 4,
+    "Finger snapping": 2,
+    "Hip hop music": 2,
+    "Titter": 2,
+    "Tools": 2,
+    "Audience": 2,
+    "Chuckle": 2,
+    "Coo": 2,
+    "Bird flap": 2,
+    "Crow": 2,
+    "Electronica": 2
+  },
+  "entity_types": {}
+}
