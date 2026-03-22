@@ -2,12 +2,21 @@
 """
 语音多任务标注系统 - 主入口
 
-支持5个任务:
+支持任务:
+- LowLevel: 低级声学特征提取 (Spectral, Prosody, Energy, Temporal, Timbre)
+- Embeddings: 深度表征 (wav2vec2, HuBERT, CLAP)
 - SCR: Speech Content Reasoning (ASR)
 - SpER: Speech Entity Recognition
 - SED: Sound Event Detection
 - ER: Emotion Recognition
 - SAR: Speaker Attribute Recognition
+
+输出结构 (三层嵌套):
+- Top Level: audio_id, file_path, content_metadata, acoustic_features
+- acoustic_features:
+  - low_level: 基础物理特征
+  - embeddings: 模型中层表示
+  - high_level: 任务标签 (ER/SED/SAR)
 
 使用方法:
     # 单音频标注
@@ -17,7 +26,7 @@
     python main.py --mode batch --input ./audio/ --output ./output/
 
     # 指定任务
-    python main.py --mode single --input audio.wav --tasks SCR ER
+    python main.py --mode single --input audio.wav --tasks ER SED
 
     # 测试模式
     python main.py --mode test --input audio.wav
@@ -69,7 +78,7 @@ def parse_args():
     parser.add_argument(
         "--tasks",
         nargs="+",
-        choices=["SCR", "SpER", "SED", "ER", "SAR", "all"],
+        choices=["LowLevel", "Embeddings", "SCR", "SpER", "SED", "ER", "SAR", "all"],
         default=["all"],
         help="指定任务"
     )
@@ -96,7 +105,7 @@ def main():
 
     # 处理任务列表
     if args.tasks == ["all"]:
-        tasks = ["SCR", "SpER", "SED", "ER", "SAR"]
+        tasks = ["LowLevel", "Embeddings", "SCR", "SpER", "SED", "ER", "SAR"]
     else:
         tasks = args.tasks
 
@@ -151,7 +160,9 @@ def main():
         result = pipeline.annotate_single(audio_path, tasks)
         print("\n" + "=" * 60)
         print("Result Summary:")
-        print(json.dumps(result.get("processing_info", {}), indent=2))
+        print(f"  audio_id: {result.get('audio_id', 'N/A')}")
+        print(f"  file_path: {result.get('file_path', 'N/A')}")
+        print(f"  acoustic_features keys: {list(result.get('acoustic_features', {}).keys())}")
 
     elif args.mode == "single":
         if not args.input:

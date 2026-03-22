@@ -4,6 +4,9 @@ Omni-Captioner/
 task_inf.md
 data/
 test_QwenCaptioner/
+lab/
+TASK/
+model_proposal.md
 
 # Python缓存
 __pycache__/

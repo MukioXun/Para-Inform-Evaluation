@@ -1,12 +1,13 @@
 """
 SED标注器 - PANNs
 声学事件检测，检测527类AudioSet事件
+输出压缩格式：仅保留top_events和prob_summary
 """
 import os
 import torch
 import librosa
 import numpy as np
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 from pathlib import Path
 
 from ..base_annotator import BaseAnnotator
@@ -17,6 +18,24 @@ class PANNsDetector(BaseAnnotator):
     """PANNs声学事件检测器"""
 
     TASK_NAME = "SED"
+
+    # 重点关注的声学事件类别
+    FOCUS_EVENTS = [
+        "Speech",
+        "Breathing",
+        "Child speech, kid speaking",
+        "Conversation",
+        "Narration, monologue",
+        "Shout",
+        "Screaming",
+        "Whispering",
+        "Laughter",
+        "Crying, sobbing",
+        "Singing",
+        "Cough",
+        "Sneeze",
+        "Snoring",
+    ]
 
     def load_model(self):
         """加载PANNs模型"""
@@ -115,7 +134,10 @@ class PANNsDetector(BaseAnnotator):
         print(f"  [SED] PANNs ready (527 classes)")
 
     def annotate(self, audio_path: str) -> Dict[str, Any]:
-        """执行声学事件检测"""
+        """
+        执行声学事件检测
+        输出压缩格式：仅保留top_events和prob_summary，剔除527维全量logits
+        """
         # 加载音频 (PANNs使用32kHz)
         audio, sr = librosa.load(audio_path, sr=32000)
 
@@ -140,39 +162,60 @@ class PANNsDetector(BaseAnnotator):
             logits = self.model(x)
             probs = torch.sigmoid(logits)[0].cpu().numpy()
 
-        # 获取top事件
+        # 阈值
         threshold = self.config.get('threshold', 0.5)
-        top_indices = np.argsort(probs)[::-1][:10]  # Top 10
 
-        events = []
-        event_distribution = {}
+        # === top_events: 仅保留置信度>=阈值的事件 ===
+        top_indices = np.argsort(probs)[::-1][:20]  # 取top 20候选
 
+        top_events = []
         for idx in top_indices:
             event_name = self._get_label(idx)
             prob = float(probs[idx])
-            event_distribution[event_name] = prob
-
             if prob >= threshold:
-                events.append({
-                    "event_name": event_name,
-                    "confidence": prob
+                top_events.append({
+                    "event": event_name,
+                    "confidence": round(prob, 4)
                 })
 
+        # === prob_summary: 重点事件的概率摘要 ===
+        focus_probs = {}
+        for event in self.FOCUS_EVENTS:
+            idx = self._get_event_index(event)
+            if idx is not None:
+                focus_probs[event] = round(float(probs[idx]), 4)
+
+        # 统计摘要
         predictions = {
-            "events": events,
-            "event_distribution": event_distribution,
-            "top_event": events[0]["event_name"] if events else "unknown"
+            "top_events": top_events[:10],  # 最多保留10个
+            "prob_summary": {
+                "focus_events": focus_probs,
+                "speech_detected": focus_probs.get("Speech", 0) >= threshold,
+                "breathing_detected": focus_probs.get("Breathing", 0) >= threshold,
+                "child_speech_detected": focus_probs.get("Child speech, kid speaking", 0) >= threshold,
+            },
+            "primary_event": top_events[0]["event"] if top_events else "unknown",
+            "primary_confidence": top_events[0]["confidence"] if top_events else 0.0
         }
 
+        # logits不再保存全量527维，只保存摘要信息
         logits_dict = {
-            "class_probabilities": probs.tolist(),
-            "top_indices": top_indices.tolist()
+            "num_detected_events": len(top_events),
+            "max_probability": round(float(np.max(probs)), 4),
+            "mean_probability": round(float(np.mean(probs)), 4)
         }
 
         return {
             "predictions": predictions,
             "logits": logits_dict
         }
+
+    def _get_event_index(self, event_name: str) -> Optional[int]:
+        """根据事件名称获取索引"""
+        try:
+            return self.labels.index(event_name)
+        except ValueError:
+            return None
 
     def _get_label(self, idx: int) -> str:
         """获取AudioSet标签"""

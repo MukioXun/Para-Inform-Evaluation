@@ -2,12 +2,16 @@
 模型配置模块
 定义各任务的模型路径、参数等
 
-支持5个任务:
-- SCR: Speech Content Reasoning (Whisper ASR only, Reasoning禁用)
+支持任务:
+- LowLevel: 低级特征提取 (Spectral, Prosody, Energy, Temporal, Timbre)
+- SCR: Speech Content Reasoning (Whisper ASR)
 - SpER: Speech Entity Recognition (FunASR-NER)
 - SED: Sound Event Detection (PANNs)
-- ER: Emotion Recognition (HuBERT)
-- SAR: Speaker Attribute Recognition (ECAPA-TDNN)
+- ER: Emotion Recognition (emotion2vec_plus_large)
+- SAR: Speaker Attribute Recognition (Age, Gender, Tone)
+  - Age: age-classification (wav2vec2-based)
+  - Gender: gender-classifier (ECAPA-TDNN)
+  - Tone: Audio-Reasoner (Qwen2-Audio)
 """
 from dataclasses import dataclass, field
 from typing import Dict, Optional, List
@@ -26,7 +30,16 @@ DEFAULT_DEVICE = "cuda"
 # 任务模型配置字典
 # ============================================================
 MODEL_CONFIGS = {
-    # SCR: Speech Content Reasoning (仅ASR，禁用Reasoning)
+    # LowLevel: 低级声学特征提取
+    "LowLevel": {
+        "model_name": "LowLevelFeatureExtractor",
+        "device": DEFAULT_DEVICE,
+        "sample_rate": 16000,
+        "use_vad": True,
+        "features": ["spectral", "prosody", "energy", "temporal", "timbre"],
+    },
+
+    # SCR: Speech Content Reasoning (仅ASR)
     "SCR": {
         "model_name": "whisper-medium",
         "model_path": str(MODELS_ROOT / "whisper-medium"),
@@ -34,13 +47,12 @@ MODEL_CONFIGS = {
         "language": "auto",
         "task": "transcribe",
         "sample_rate": 16000,
-        "enable_reasoning": False,  # 禁用Reasoning
+        "enable_reasoning": False,
     },
 
     # SpER: Speech Entity Recognition
     "SpER": {
         "model_name": "FunASR-NER",
-        # 使用ModelScope模型ID，FunASR会自动下载
         "model_id": "damo/speech_timestamp_prediction-v1-16k-offline",
         "device": DEFAULT_DEVICE,
         "sample_rate": 16000,
@@ -56,28 +68,82 @@ MODEL_CONFIGS = {
         "audio_length": 10.0,
         "threshold": 0.5,
         "num_classes": 527,
+        # 重点关注的声学事件
+        "focus_events": ["Speech", "Breathing", "Child speech, kid speaking"],
     },
 
-    # ER: Emotion Recognition (使用FunASR emotion2vec)
+    # ER: Emotion Recognition (emotion2vec_plus_large)
     "ER": {
         "model_name": "emotion2vec_plus_large",
-        "model_path": "iic/emotion2vec_plus_large",  # FunASR会自动下载
+        "model_path": "iic/emotion2vec_plus_large",
         "device": DEFAULT_DEVICE,
         "sample_rate": 16000,
-        "emotion_classes": ["angry", "happy", "neutral", "sad", "unknown"],
+        # emotion2vec_plus_large 官方标签映射 (0-8)
+        "emotion_map": {
+            0: "angry",
+            1: "disgusted",
+            2: "fearful",
+            3: "happy",
+            4: "neutral",
+            5: "other",
+            6: "sad",
+            7: "surprised",
+            8: "unknown"
+        },
+        "emotion_classes": ["angry", "disgusted", "fearful", "happy", "neutral", "other", "sad", "surprised", "unknown"],
     },
 
     # SAR: Speaker Attribute Recognition
+    # 整合 Age + Gender + Tone 三个子任务
     "SAR": {
-        "model_name": "ECAPA-TDNN",
-        "model_path": str(MODELS_ROOT / "ecapa-voxceleb"),
+        "model_name": "SARAnnotator",
         "device": DEFAULT_DEVICE,
         "sample_rate": 16000,
-        "embedding_dim": 192,
-        "attribute_heads": {
-            "gender": {"classes": ["male", "female", "unknown"]},
-            "age_group": {"classes": ["child", "young", "middle", "senior", "unknown"]},
+        "enable_age": True,
+        "enable_gender": True,
+        "enable_tone": True,
+        "sub_configs": {
+            "Age": {
+                "model_path": str(MODELS_ROOT / "age-classification"),
+                "sample_rate": 16000,
+            },
+            "Gender": {
+                "model_path": str(MODELS_ROOT / "gender-classifier"),
+                "sample_rate": 16000,
+            },
+            "Tone": {
+                "model_path": str(MODELS_ROOT / "Audio-Reasoner"),
+                "sample_rate": 16000,
+                "max_tokens": 512,
+                "temperature": 0,
+                "batch_size": 1,
+            }
         }
+    },
+
+    # === 独立子任务配置 (可单独调用) ===
+    "Age": {
+        "model_name": "AgeClassifier",
+        "model_path": str(MODELS_ROOT / "age-classification"),
+        "device": DEFAULT_DEVICE,
+        "sample_rate": 16000,
+    },
+
+    "Gender": {
+        "model_name": "GenderClassifier",
+        "model_path": str(MODELS_ROOT / "gender-classifier"),
+        "device": DEFAULT_DEVICE,
+        "sample_rate": 16000,
+    },
+
+    "Tone": {
+        "model_name": "ToneAnnotator",
+        "model_path": str(MODELS_ROOT / "Audio-Reasoner"),
+        "device": DEFAULT_DEVICE,
+        "sample_rate": 16000,
+        "max_tokens": 512,
+        "temperature": 0,
+        "batch_size": 1,
     }
 }
 

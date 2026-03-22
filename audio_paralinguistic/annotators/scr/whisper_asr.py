@@ -37,69 +37,69 @@ class WhisperASRAnnotator(BaseAnnotator):
 
     def annotate(self, audio_path: str) -> Dict[str, Any]:
         """执行ASR转写"""
-        # 加载音频
+
+        # 1️⃣ 加载音频
         audio, sr = librosa.load(audio_path, sr=self.sample_rate)
 
-        # 预处理
+        # 2️⃣ 预处理（✅ 加 attention_mask）
         inputs = self.processor(
             audio,
             sampling_rate=self.sample_rate,
-            return_tensors="pt"
+            return_tensors="pt",
+            return_attention_mask=True
         )
-        inputs = {k: v.to(self.device) for k, v in inputs.items()}
 
-        # 推理
+        input_features = inputs.input_features.to(self.device)
+        attention_mask = inputs.attention_mask.to(self.device)
+
+        # 3️⃣ 推理
         with torch.no_grad():
-            # 语言设置：auto表示自动检测
-            language = self.config.get('language', 'auto')
-
-            if language == 'auto':
-                # 自动检测语言，不设置forced_decoder_ids
-                generated_ids = self.model.generate(**inputs)
-            else:
-                # 指定语言
-                forced_decoder_ids = self.processor.get_decoder_prompt_ids(
-                    language=language,
-                    task=self.config.get('task', 'transcribe')
+            generated_ids = self.model.generate(
+                    input_features,
+                    attention_mask=attention_mask,
+                    language="zh",
+                    task="transcribe"
                 )
-                generated_ids = self.model.generate(
-                    **inputs,
-                    forced_decoder_ids=forced_decoder_ids
-                )
+            # language = self.config.get('language', 'auto')
+            # task = self.config.get('task', 'transcribe')
 
-        # 解码
+            # if language == 'auto':
+            #     # ✅ 自动语言检测（新标准写法）
+            #     generated_ids = self.model.generate(
+            #         input_features,
+            #         attention_mask=attention_mask
+            #     )
+            # else:
+            #     # ✅ 新版写法（替代 forced_decoder_ids）
+            #     generated_ids = self.model.generate(
+            #         input_features,
+            #         attention_mask=attention_mask,
+            #         language=language,
+            #         task=task
+            #     )
+
+        # 4️⃣ 解码
         transcription = self.processor.batch_decode(
             generated_ids,
             skip_special_tokens=True
         )[0]
 
-        # 获取语言
-        language = self._detect_language(generated_ids)
-
-        # 构建输出
-        predictions = {
-            "transcription": {
-                "text": transcription,
-                "language": language,
-                "confidence": 0.9,  # Whisper不直接提供置信度
-            }
-        }
-
-        logits = {
-            "transcription_text": transcription,
-            "language_detected": language
-        }
+        # 5️⃣ 语言（你这里其实没真正实现）
+        language_out = language if language != "auto" else "unknown"
 
         return {
-            "predictions": predictions,
-            "logits": logits
+            "predictions": {
+                "transcription": {
+                    "text": transcription,
+                    "language": language_out,
+                    "confidence": 0.9
+                }
+            },
+            "logits": {
+                "transcription_text": transcription,
+                "language_detected": language_out
+            }
         }
-
-    def _detect_language(self, generated_ids):
-        """从生成的token中检测语言"""
-        # 简单启发式：根据生成的第一个token判断
-        # 实际可以用language detection模型
-        return "auto"
 
 
 # 别名

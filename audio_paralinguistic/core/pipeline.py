@@ -1,10 +1,19 @@
 """
 Pipeline主流程控制
 协调各任务标注器执行
+
+输出结构：
+- Top Level: audio_id, file_path, content_metadata, acoustic_features
+- acoustic_features:
+  - low_level: 基础物理特征
+  - high_level: 任务标签 (ER/SED/SAR)
+
+执行顺序：按标注维度依次加载模型，全部数据标注完该维度再切换
 """
 import os
 import json
 import time
+import hashlib
 from typing import Dict, List, Optional, Any
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -39,10 +48,10 @@ class AnnotationPipeline:
         self,
         audio_path: str,
         tasks: Optional[List[str]] = None,
-        save_individual: bool = True
+        save_individual: bool = False
     ) -> Dict[str, Any]:
         """
-        单音频标注
+        单音频标注 - 返回三层嵌套结构
 
         Args:
             audio_path: 音频文件路径
@@ -50,7 +59,7 @@ class AnnotationPipeline:
             save_individual: 是否保存各任务单独结果
 
         Returns:
-            合并后的标注结果
+            三层嵌套的标注结果
         """
         tasks = tasks or list(self.annotators.keys())
         audio_id = Path(audio_path).stem
@@ -61,38 +70,157 @@ class AnnotationPipeline:
         results = {}
         start_time = time.time()
 
-        for task in tasks:
-            if task not in self.annotators:
-                print(f"[Pipeline] Warning: Task {task} not registered, skipping")
-                continue
+        # 按层级顺序处理
+        # 1. Low-level features
+        if "LowLevel" in tasks:
+            results["LowLevel"] = self._run_task("LowLevel", audio_path)
 
-            try:
-                result = self.annotators[task].process(audio_path)
-                results[task] = result
-
-                # 保存单独结果
-                if save_individual:
-                    task_output_dir = self.output_dir / task.lower()
-                    task_output_dir.mkdir(parents=True, exist_ok=True)
-                    output_path = task_output_dir / f"{audio_id}.json"
-                    self.annotators[task].save(result, str(output_path))
-                    print(f"[Pipeline]   {task}: saved to {output_path}")
-
-            except Exception as e:
-                print(f"[Pipeline]   {task}: failed - {e}")
-                results[task] = {
-                    "audio_id": audio_id,
-                    "task": task,
-                    "error": str(e),
-                    "metadata": {"status": "failed"}
-                }
+        # 2. High-level tasks (ER, SED, SAR, SCR, SpER)
+        high_level_tasks = ["ER", "SED", "SAR", "SCR", "SpER"]
+        for task in high_level_tasks:
+            if task in tasks:
+                results[task] = self._run_task(task, audio_path)
 
         total_time = time.time() - start_time
 
-        # 合并结果
-        merged = self._merge_results(audio_path, results, total_time)
+        # 构建三层嵌套结构
+        merged = self._build_nested_structure(audio_path, results, total_time)
+
+        # 保存合并结果
+        merged_dir = self.output_dir / "merged"
+        merged_dir.mkdir(parents=True, exist_ok=True)
+        merged_path = merged_dir / f"{audio_id}_merged.json"
+
+        with open(merged_path, 'w', encoding='utf-8') as f:
+            json.dump(merged, f, ensure_ascii=False, indent=2)
+
+        print(f"[Pipeline] Merged result saved to: {merged_path}")
 
         return merged
+
+    def _run_task(self, task_name: str, audio_path: str) -> Dict[str, Any]:
+        """运行单个任务"""
+        if task_name not in self.annotators:
+            print(f"[Pipeline] Warning: Task {task_name} not registered, skipping")
+            return {"error": "Task not registered"}
+
+        try:
+            result = self.annotators[task_name].process(audio_path)
+            return result
+        except Exception as e:
+            print(f"[Pipeline]   {task_name}: failed - {e}")
+            return {"error": str(e)}
+
+    def _build_nested_structure(
+        self,
+        audio_path: str,
+        results: Dict[str, Any],
+        total_time: float
+    ) -> Dict[str, Any]:
+        """
+        构建三层嵌套结构
+        删除 task, status, timestamp 等冗余字段
+        """
+        audio_id = Path(audio_path).stem
+
+        # === Top Level ===
+        structure = {
+            "audio_id": audio_id,
+            "file_path": str(audio_path),
+            "content_metadata": self._extract_content_metadata(audio_path, results),
+            "acoustic_features": {
+                "low_level": {},
+                "high_level": {}
+            }
+        }
+
+        # === acoustic_features.low_level ===
+        if "LowLevel" in results and "predictions" in results["LowLevel"]:
+            low_level_data = results["LowLevel"]["predictions"]
+            structure["acoustic_features"]["low_level"] = {
+                "spectral": low_level_data.get("spectral", {}),
+                "prosody": low_level_data.get("prosody", {}),
+                "energy": low_level_data.get("energy", {}),
+                "temporal": low_level_data.get("temporal", {}),
+                "timbre": low_level_data.get("timbre", {})
+            }
+
+        # === acoustic_features.high_level ===
+        high_level = {}
+
+        # ER: 情感识别
+        if "ER" in results and "predictions" in results["ER"]:
+            er_data = results["ER"]["predictions"]
+            high_level["emotion"] = {
+                "emotion_id": er_data.get("discrete", {}).get("emotion_id", 8),
+                "primary_emotion": er_data.get("discrete", {}).get("primary_emotion", "unknown"),
+                "confidence": er_data.get("discrete", {}).get("confidence", 0.0),
+                "distribution": er_data.get("discrete", {}).get("emotion_distribution", {}),
+                "valence": er_data.get("dimensional", {}).get("valence", 0.0),
+                "arousal": er_data.get("dimensional", {}).get("arousal", 0.0)
+            }
+
+        # SED: 声学事件检测
+        if "SED" in results and "predictions" in results["SED"]:
+            sed_data = results["SED"]["predictions"]
+            high_level["events"] = {
+                "top_events": sed_data.get("top_events", []),
+                "prob_summary": sed_data.get("prob_summary", {}),
+                "primary_event": sed_data.get("primary_event", "unknown")
+            }
+
+        # SAR: 说话人属性
+        if "SAR" in results and "predictions" in results["SAR"]:
+            sar_data = results["SAR"]["predictions"]
+            high_level["speaker"] = {
+                "gender": sar_data.get("attributes", {}).get("gender", {}),
+                "age": sar_data.get("attributes", {}).get("age", {}),
+                "tone": sar_data.get("attributes", {}).get("tone", {})
+            }
+
+        # SCR: 语音内容
+        if "SCR" in results and "predictions" in results["SCR"]:
+            scr_data = results["SCR"]["predictions"]
+            high_level["transcription"] = {
+                "text": scr_data.get("text", ""),
+                "language": scr_data.get("language", "unknown")
+            }
+
+        # SpER: 语音实体
+        if "SpER" in results and "predictions" in results["SpER"]:
+            sper_data = results["SpER"]["predictions"]
+            high_level["entities"] = sper_data.get("entities", [])
+
+        structure["acoustic_features"]["high_level"] = high_level
+
+        return structure
+
+    def _extract_content_metadata(self, audio_path: str, results: Dict[str, Any]) -> Dict[str, Any]:
+        """提取内容元数据"""
+        import soundfile as sf
+
+        metadata = {
+            "duration_seconds": 0.0,
+            "sample_rate": 0,
+            "channels": 1,
+            "format": Path(audio_path).suffix.lstrip('.')
+        }
+
+        try:
+            info = sf.info(audio_path)
+            metadata["duration_seconds"] = round(info.duration, 3)
+            metadata["sample_rate"] = info.samplerate
+            metadata["channels"] = info.channels
+        except Exception:
+            pass
+
+        # 从LowLevel获取更精确的时长
+        if "LowLevel" in results:
+            temporal = results["LowLevel"].get("predictions", {}).get("temporal", {})
+            if temporal.get("duration", {}).get("total_seconds"):
+                metadata["duration_seconds"] = temporal["duration"]["total_seconds"]
+
+        return metadata
 
     def annotate_batch(
         self,
@@ -129,47 +257,6 @@ class AnnotationPipeline:
 
         print(f"\n[Pipeline] Batch processing complete!")
 
-    def _merge_results(
-        self,
-        audio_path: str,
-        results: Dict[str, Any],
-        total_time: float
-    ) -> Dict[str, Any]:
-        """合并各任务结果"""
-        audio_id = Path(audio_path).stem
-
-        merged = {
-            "audio_id": audio_id,
-            "file_path": str(audio_path),
-            "annotations": {},
-            "processing_info": {
-                "total_time": round(total_time, 3),
-                "tasks_completed": [],
-                "tasks_failed": [],
-                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-            }
-        }
-
-        for task, result in results.items():
-            if result.get("metadata", {}).get("status") == "failed":
-                merged["processing_info"]["tasks_failed"].append(task)
-            else:
-                merged["processing_info"]["tasks_completed"].append(task)
-
-            merged["annotations"][task] = result
-
-        # 保存合并结果
-        merged_dir = self.output_dir / "merged"
-        merged_dir.mkdir(parents=True, exist_ok=True)
-        merged_path = merged_dir / f"{audio_id}_merged.json"
-
-        with open(merged_path, 'w', encoding='utf-8') as f:
-            json.dump(merged, f, ensure_ascii=False, indent=2)
-
-        print(f"[Pipeline] Merged result saved to: {merged_path}")
-
-        return merged
-
 
 def create_pipeline(
     tasks: List[str] = None,
@@ -193,16 +280,18 @@ def create_pipeline(
     from ..annotators.scr.whisper_asr import WhisperASRAnnotator
     from ..annotators.sper.funasr_ner import FunASRNERAnnotator
     from ..annotators.sed.panns_detector import PANNsDetector
-    from ..annotators.er.hubert_emotion import HuBERTEmotionAnnotator
-    from ..annotators.sar.ecapa_attribute import ECAPAAttributeAnnotator
+    from ..annotators.er.hubert_emotion import Emotion2VecAnnotator
+    from ..annotators.sar.sar_annotator import SARAnnotator
+    from ..annotators.lowlevel.feature_extractor import LowLevelFeatureExtractor
 
     # 任务到标注器类的映射
     TASK_ANNOTATORS = {
+        "LowLevel": LowLevelFeatureExtractor,
         "SCR": WhisperASRAnnotator,
         "SpER": FunASRNERAnnotator,
         "SED": PANNsDetector,
-        "ER": HuBERTEmotionAnnotator,
-        "SAR": ECAPAAttributeAnnotator,
+        "ER": Emotion2VecAnnotator,
+        "SAR": SARAnnotator,
     }
 
     # 创建Pipeline
@@ -214,8 +303,8 @@ def create_pipeline(
     tasks = tasks or list(TASK_ANNOTATORS.keys())
 
     for task in tasks:
-        if task in TASK_ANNOTATORS and task in MODEL_CONFIGS:
-            config = MODEL_CONFIGS[task].copy()
+        if task in TASK_ANNOTATORS:
+            config = MODEL_CONFIGS.get(task, {}).copy()
             config['device'] = device
             annotator = TASK_ANNOTATORS[task](config)
             pipeline.register_annotator(task, annotator)
