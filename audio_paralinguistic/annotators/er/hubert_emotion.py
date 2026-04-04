@@ -61,19 +61,45 @@ class Emotion2VecAnnotator(BaseAnnotator):
 
         print(f"  [ER] Loading Emotion2Vec model...")
 
-        # 使用FunASR的emotion2vec模型
-        self.model = AutoModel(
-            model="iic/emotion2vec_plus_large",
-            device=self.device,
-            disable_update=True,
-            disable_log=True
-        )
+        # 尝试使用本地模型路径或下载
+        model_path = self.config.get('model_path', 'iic/emotion2vec_plus_large')
+
+        try:
+            # 使用FunASR的emotion2vec模型
+            self.model = AutoModel(
+                model=model_path,
+                device=self.device,
+                disable_update=True,
+                disable_log=True
+            )
+            print(f"  [ER] Emotion2Vec loaded from: {model_path}")
+        except Exception as e:
+            print(f"  [ER] Failed to load from {model_path}: {e}")
+            print(f"  [ER] Trying to download from modelscope...")
+
+            # 尝试直接下载
+            try:
+                self.model = AutoModel(
+                    model="iic/emotion2vec_plus_large",
+                    device=self.device,
+                    disable_update=True,
+                    disable_log=True,
+                    hub='ms'  # 使用 modelscope
+                )
+                print(f"  [ER] Emotion2Vec loaded from modelscope")
+            except Exception as e2:
+                print(f"  [ER] Failed to load emotion model: {e2}")
+                print(f"  [ER] Will use fallback mode (random emotion)")
+                self.model = None
 
         self.emotion_classes = self.config.get('emotion_classes', self.EMOTION_CLASSES)
-        print(f"  [ER] Emotion2Vec loaded")
 
     def annotate(self, audio_path: str) -> Dict[str, Any]:
         """执行情感识别"""
+        # 检查模型是否加载成功
+        if self.model is None:
+            return self._fallback_annotate(audio_path)
+
         # 加载音频
         wav, sr = librosa.load(audio_path, sr=self.sample_rate)
         wav_tensor = torch.from_numpy(wav).unsqueeze(0).float()
@@ -185,6 +211,34 @@ class Emotion2VecAnnotator(BaseAnnotator):
             "unknown": (0.0, 0.5)
         }
         return vad_mapping.get(emotion.lower(), (0.0, 0.5))
+
+    def _fallback_annotate(self, audio_path: str) -> Dict[str, Any]:
+        """降级处理：模型不可用时返回默认值"""
+        predictions = {
+            "discrete": {
+                "emotion_id": 8,
+                "primary_emotion": "unknown",
+                "confidence": 0.0,
+                "emotion_distribution": {"unknown": 1.0}
+            },
+            "dimensional": {
+                "valence": 0.0,
+                "arousal": 0.5,
+                "dominance": 0.5
+            }
+        }
+
+        logits_dict = {
+            "emotion_id": 8,
+            "primary_emotion": "unknown",
+            "confidence": 0.0,
+            "error": "emotion model not available"
+        }
+
+        return {
+            "predictions": predictions,
+            "logits": logits_dict
+        }
 
 
 # 别名

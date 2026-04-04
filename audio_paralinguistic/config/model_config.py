@@ -75,7 +75,7 @@ MODEL_CONFIGS = {
     # ER: Emotion Recognition (emotion2vec_plus_large)
     "ER": {
         "model_name": "emotion2vec_plus_large",
-        "model_path": "iic/emotion2vec_plus_large",
+        "model_path":  str(MODELS_ROOT / "emotion2vec_plus_large"),
         "device": DEFAULT_DEVICE,
         "sample_rate": 16000,
         # emotion2vec_plus_large 官方标签映射 (0-8)

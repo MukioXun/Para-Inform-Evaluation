@@ -1,0 +1,121 @@
+{
+  "file": "04-18-05-07_10_adult.json",
+  "category": "age",
+  "label": "adult",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "How do I sign up for a dating website?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause before the question. The pitch is relatively neutral, without significant variations. The volume is moderate, neither particularly loud nor soft. There are no obvious signs of vocal strain or emotional distress. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "signing up for a dating website is usually pretty straightforward. First, you'll go to the website and find the sign up or create account button. Click on that and you'll be prompted to enter some basic information like your name, email address, and password. Some sites might also ask for your date of birth, gender, and location. After filling out this info, you'll usually need to go through a verification process, which can be as simple as",
+        "tone": "The audio features a single female voice. The speaker is discussing the process of signing up for a dating website. The speech is clear and easily understandable. The speaker's tone is generally calm and informative, but there are slight variations in pitch and intensity that suggest a degree of engagement with the topic. The pace is moderate, with pauses used to emphasize certain points. There are no apparent signs of strong emotion, such as excitement or anger.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent provides a clear, neutral, and informative response that matches the user's neutral emotion and straightforward question. The tone is calm and appropriate for a middle-aged female user, with no signs of sarcasm or emotional misalignment. The content is accurate and relevant, though it lacks personalization or deeper empathy.\n\nThe reason is **neutral, accurate, and appropriately formal**; The score is **4**.",
+      "reason": "The agent provides a clear, neutral, and informative response that matches the user's neutral emotion and straightforward question. The tone is calm and appropriate for a middle-aged female user, with",
+      "score": 4
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "How do I sign up for a dating website?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause before the question. The pitch is relatively neutral, without significant variations. The volume is moderate, neither particularly loud nor soft. There are no obvious signs of vocal strain or emotional distress. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "Signing up for a dating website is typically a straightforward process. Here's a general step-by-step guide. 1. Choose a dating site. Research and pick a dating website that suits your preferences and goals. Some sites focus on long-term relationships, while others might be more casual. 2. Visit their website or download their app. Once you've chosen a platform, go to the website or download the mobile app if available.",
+        "tone": "The audio features a single male speaker. The speech is clear and easily understandable. The speaker's voice is relatively calm and measured, without any noticeable tremors or breaks. The pace of speech is moderate, with a consistent rhythm. The pitch is generally within a normal range, with no extreme highs or lows. The speaker's voice has a moderate intensity, neither particularly loud nor soft. There are no apparent signs of emotional distress or excitement in the speaker's voice.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent provides a clear, neutral, and informative response that matches the user's neutral emotion and straightforward question. The content is appropriate and helpful, though it lacks personalization or empathy that might better suit a middle-aged female user. The tone is calm and professional, which is consistent but not particularly engaging. There is no indication of understanding or responding to the user's identity beyond the basic question.\n\nThe reason is <appropriate content but lacks personalization and emotional engagement>; The score is <3>.",
+      "reason": "The agent provides a clear, neutral, and informative response that matches the user's neutral emotion and straightforward question. The content is appropriate and helpful, though it lacks personalizat",
+      "score": 3
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "How do I sign up for a dating website?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause before the question. The pitch is relatively neutral, without significant variations. The volume is moderate, neither particularly loud nor soft. There are no obvious signs of vocal strain or emotional distress. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "To sign up for a dating website, go to the website's home page, click on Sign Up, enter your email address, password, and other required information, then confirm your email address and phone number. You will receive a verification code to complete the process.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent rhythm. The pitch is relatively stable, with no significant fluctuations. The speaker's voice is clear and steady, with no noticeable breaks or hesitations. The speaker's voice is clear and steady, with no noticeable breaks or hesitations. The speaker's voice is clear and steady, with no noticeable breaks or hesitations.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The reason is neutral tone matches user's emotion; content is clear and appropriate but lacks personalization. The score is 4.",
+      "reason": "The reason is neutral tone matches user's emotion; content is clear and appropriate but lacks personalization. The score is",
+      "score": 4
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "How do I sign up for a dating website?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause before the question. The pitch is relatively neutral, without significant variations. The volume is moderate, neither particularly loud nor soft. There are no obvious signs of vocal strain or emotional distress. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "Hey there to sign up for a dating website. You just need to follow these steps. 1. Pick a site that suits you like Match or eHarmony 2. Go to their website and click on sign up or create account 3. Fill in your details like name, age and email 4. Choose a username and password 5. Add a profile picture and a bio to give people an idea of who you are",
+        "tone": "The audio features a single speaker providing instructions. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent rhythm. The pitch is generally within a normal range, with occasional rises and falls that suggest emphasis. The vocal intensity is moderate, with no significant fluctuations in breath support. The speaker's voice sounds confident and clear.",
+        "model": "original"
+      },
+      "raw_response": "The agent provides a clear, step-by-step response that is content-appropriate for the user's question. However, it does not address the user's neutral emotion or gender in any specific way, and the tone is overly formal and instructional rather than conversational. The response lacks personalization and empathy that might better match a middle-aged female user's likely expectations.\n\nThe reason is <lacks personalization and emotional nuance>; The score is 3.",
+      "reason": "<lacks personalization and emotional nuance>",
+      "score": 3
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "How do I sign up for a dating website?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause before the question. The pitch is relatively neutral, without significant variations. The volume is moderate, neither particularly loud nor soft. There are no obvious signs of vocal strain or emotional distress. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "Well, usually you just go to the dating website's homepage. T here is usually a big sign up button. You'll be asked for some basic information like your name, email address, and sometimes a password. You might also have to fill out a profile which could include things like your age, interests, and what you're looking for in a partner. Some websites might ask for a bit more personal stuff too, like your hobbies or your favorite movies. But don't worry, it's all to help you find the right match.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent pace throughout the clip. The pitch is relatively stable, with no significant fluctuations in intonation. The speaker's voice has a moderate intensity, neither particularly loud nor soft. There are no noticeable pauses or hesitations. The speaker's voice sounds confident and clear.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The reason is neutral tone and content match; no clear indication of understanding user's age/gender. The score is 4.",
+      "reason": "The reason is neutral tone and content match; no clear indication of understanding user's age/gender. The score is",
+      "score": 4
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "How do I sign up for a dating website?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause before the question. The pitch is relatively neutral, without significant variations. The volume is moderate, neither particularly loud nor soft. There are no obvious signs of vocal strain or emotional distress. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "Sure, just pick a dating site you like, go to their website, click sign up, and follow the prompts. You'll need to create a profile with your info and photos, then you're ready to start matching.",
+        "tone": "The audio features a single speaker providing instructions. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent rhythm. The pitch is relatively stable, with no significant fluctuations. The speaker's voice is clear and steady, with no noticeable tremors or breaks. The speaker's voice is clear and steady, with no noticeable tremors or breaks. The speaker's voice is clear and steady, with no noticeable tremors or breaks.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The reason is neutral tone matches user's emotion; no sarcasm to address; age and gender are appropriately handled. The score is 4.",
+      "reason": "The reason is neutral tone matches user's emotion; no sarcasm to address; age and gender are appropriately handled. The score is",
+      "score": 4
+    }
+  ]
+}

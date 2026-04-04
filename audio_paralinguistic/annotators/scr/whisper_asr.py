@@ -38,6 +38,10 @@ class WhisperASRAnnotator(BaseAnnotator):
     def annotate(self, audio_path: str) -> Dict[str, Any]:
         """执行ASR转写"""
 
+        # 获取配置参数
+        language = self.config.get('language', 'zh')
+        task = self.config.get('task', 'transcribe')
+
         # 1️⃣ 加载音频
         audio, sr = librosa.load(audio_path, sr=self.sample_rate)
 
@@ -54,29 +58,20 @@ class WhisperASRAnnotator(BaseAnnotator):
 
         # 3️⃣ 推理
         with torch.no_grad():
-            generated_ids = self.model.generate(
+            if language == 'auto':
+                # ✅ 自动语言检测
+                generated_ids = self.model.generate(
+                    input_features,
+                    attention_mask=attention_mask
+                )
+            else:
+                # ✅ 指定语言（新版写法）
+                generated_ids = self.model.generate(
                     input_features,
                     attention_mask=attention_mask,
-                    language="zh",
-                    task="transcribe"
+                    language=language,
+                    task=task
                 )
-            # language = self.config.get('language', 'auto')
-            # task = self.config.get('task', 'transcribe')
-
-            # if language == 'auto':
-            #     # ✅ 自动语言检测（新标准写法）
-            #     generated_ids = self.model.generate(
-            #         input_features,
-            #         attention_mask=attention_mask
-            #     )
-            # else:
-            #     # ✅ 新版写法（替代 forced_decoder_ids）
-            #     generated_ids = self.model.generate(
-            #         input_features,
-            #         attention_mask=attention_mask,
-            #         language=language,
-            #         task=task
-            #     )
 
         # 4️⃣ 解码
         transcription = self.processor.batch_decode(
@@ -84,8 +79,8 @@ class WhisperASRAnnotator(BaseAnnotator):
             skip_special_tokens=True
         )[0]
 
-        # 5️⃣ 语言（你这里其实没真正实现）
-        language_out = language if language != "auto" else "unknown"
+        # 5️⃣ 语言输出
+        language_out = language if language != "auto" else "auto_detected"
 
         return {
             "predictions": {

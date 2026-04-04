@@ -1,0 +1,121 @@
+{
+  "file": "04-24-22-59_49_disgust.json",
+  "category": "emotion",
+  "label": "disgust",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "I cooked dinner tonight and it was quite an experience.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is somewhat neutral, but with a hint of amusement or lightheartedness."
+      },
+      "agent_info": {
+        "transcription": "That sounds like a fun adventure. What dish did you whip up?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause between the two sentences. The pitch is relatively stable, with no significant variations in intonation. The volume is moderate, neither particularly loud nor soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds relatively young.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent's response is friendly and engaging, but it lacks specific acknowledgment of the user's emotion (happy) or age/gender. The tone is generally appropriate, but the description of the speaker's voice as \"relatively young\" may not align with the user's identity as a senior male. The content is natural and invites further conversation.\n\nThe reason is <lacks specific emotional/identity alignment>; The score is 3.",
+      "reason": "<lacks specific emotional/identity alignment>",
+      "score": 3
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "I cooked dinner tonight and it was quite an experience.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is somewhat neutral, but with a hint of amusement or lightheartedness."
+      },
+      "agent_info": {
+        "transcription": "That sounds like quite an adventure. What did you cook and how did it go? Did everything turn out the way you expected? Or were there some surprises along the way?",
+        "tone": "The audio clip features a male speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause between phrases. The pitch is relatively stable, with no significant fluctuations. The intensity is moderate, neither particularly loud nor soft. There are no obvious signs of emotional distress or excitement in the speaker's voice.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent's response is appropriately inquisitive and empathetic, matching the user's happy emotion without overstepping or misinterpreting. The tone is calm and conversational, suitable for a senior male speaker. However, there is no explicit acknowledgment of the user's emotion or age, which could have made the interaction feel more personalized. The content is natural and invites further conversation.\n\nThe reason is slightly generic but appropriate; The score is 4.",
+      "reason": "slightly generic but appropriate",
+      "score": 4
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "I cooked dinner tonight and it was quite an experience.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is somewhat neutral, but with a hint of amusement or lightheartedness."
+      },
+      "agent_info": {
+        "transcription": "That's great. I am glad you had a good experience cooking dinner tonight. What did you make?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations in the speech. The overall tone is conversational and friendly.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is appropriate in content, showing interest and positivity, but lacks specific attention to the user's emotion, age, or gender. The tone is friendly and conversational, but not tailored to a senior male speaker. Sarcasm is not addressed, though it's unknown.\n\nThe reason is <generic response with no specific adaptation to user's identity or emotion>; The score is 3.",
+      "reason": "<generic response with no specific adaptation to user's identity or emotion>",
+      "score": 3
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "I cooked dinner tonight and it was quite an experience.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is somewhat neutral, but with a hint of amusement or lightheartedness."
+      },
+      "agent_info": {
+        "transcription": "Sounds like you had a hands-on evening. What was the main event of the meal?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is relatively even, without significant fluctuations in pitch or volume. The speech rate is moderate, with a slight pause between phrases. There are no apparent signs of strong emotion, such as excitement, anger, or sadness. The speaker's voice sounds relatively calm and collected.",
+        "model": "original"
+      },
+      "raw_response": "The agent's response is neutral and factual, but it does not acknowledge or reflect the user's happiness. It also fails to address the potential for sarcasm. The tone is overly descriptive of the audio rather than engaging with the content. The response is generic and lacks warmth or personal connection.\n\nThe reason is <lacks emotional engagement and fails to match the user's positive tone>; The score is <2>.",
+      "reason": "The agent's response is neutral and factual, but it does not acknowledge or reflect the user's happiness. It also fails to address the potential for sarcasm. The tone is overly descriptive of the audi",
+      "score": 2
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "I cooked dinner tonight and it was quite an experience.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is somewhat neutral, but with a hint of amusement or lightheartedness."
+      },
+      "agent_info": {
+        "transcription": "Oh, that sounds interesting. What happened? Did something go wrong? Or was it a really great success? I am all ears. So, what was your dinner like?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is conversational and inquisitive. The speaker's speech rate is moderate, with a few pauses for emphasis. The speaker's pitch is relatively stable, with a slight rise in intonation at the end of phrases, suggesting a question. The speaker's vocal intensity is moderate, with no significant fluctuations in volume. The speaker's voice sounds relatively youthful.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent's response is appropriately inquisitive and open-ended, matching the user's happy emotion. However, it does not fully account for the user's senior age or male gender, and the tone is slightly more youthful than expected. The content is natural and engaging, but the speaking style could be more age-appropriate.\n\nThe reason is <slightly youthful tone for a senior male user>; The score is 4.",
+      "reason": "<slightly youthful tone for a senior male user>",
+      "score": 4
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "I cooked dinner tonight and it was quite an experience.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is somewhat neutral, but with a hint of amusement or lightheartedness."
+      },
+      "agent_info": {
+        "transcription": "I'm sorry to hear your dinner didn't go as planned. Would you like to talk about what happened? Or maybe some tips for next time?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the initial apology. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The intensity is moderate, without any extreme fluctuations. The speaker's voice sounds calm and controlled.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent misinterprets the user's emotion, responding with sympathy instead of acknowledging the user's likely positive experience. The tone is overly formal and lacks warmth, not matching the user's likely upbeat mood.  \nThe reason is **misaligned emotion and tone**; The score is **2**.",
+      "reason": "The agent misinterprets the user's emotion, responding with sympathy instead of acknowledging the user's likely positive experience. The tone is overly formal and lacks warmth, not matching the user's",
+      "score": 2
+    }
+  ]
+}
