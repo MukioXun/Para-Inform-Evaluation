@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category | upper }} - 音频标注</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+        }
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        .header a:hover {
+            opacity: 1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .info-bar {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .info-bar .count {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .dir-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .dir-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: inherit;
+        }
+        .dir-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .dir-card.annotated {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .dir-card .name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+        .dir-card .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .status-badge.done {
+            background: #d1fae5;
+            color: #059669;
+        }
+        .status-badge.pending {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .label-tag {
+            background: #ede9fe;
+            color: #7c3aed;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="/">← 返回首页</a>
+            <h1>{{ category | upper }} 类别标注</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="info-bar">
+            <span>共 <span class="count">{{ dirs | length }}</span> 个数据项</span>
+            <span>已标注 <span class="count">{{ annotation_status.values() | select('true') | list | length }}</span> 个</span>
+        </div>
+
+        <div class="dir-grid">
+            {% for dir in dirs %}
+            <a href="/annotate/{{ category }}/{{ dir }}"
+               class="dir-card {{ 'annotated' if annotation_status.get(dir) }}">
+                <div class="name">{{ dir }}</div>
+                <div class="status">
+                    {% if dir.split('_') | length >= 3 %}
+                    <span class="label-tag">{{ dir.split('_')[-1] }}</span>
+                    {% endif %}
+                    <span class="status-badge {{ 'done' if annotation_status.get(dir) else 'pending' }}">
+                        {{ '✓ 已标注' if annotation_status.get(dir) else '待标注' }}
+                    </span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

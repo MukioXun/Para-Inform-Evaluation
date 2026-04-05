@@ -10,6 +10,7 @@ model_proposal.md
 audio_paralinguistic/scripts/dev
 evaluation_results
 audio/
+Eval/Results
 
 # Python缓存
 __pycache__/

@@ -5,13 +5,11 @@
 支持任务:
 - LowLevel: 低级特征提取 (Spectral, Prosody, Energy, Temporal, Timbre)
 - SCR: Speech Content Reasoning (Whisper ASR)
-- SpER: Speech Entity Recognition (FunASR-NER)
-- SED: Sound Event Detection (PANNs)
 - ER: Emotion Recognition (emotion2vec_plus_large)
 - SAR: Speaker Attribute Recognition (Age, Gender, Tone)
   - Age: age-classification (wav2vec2-based)
   - Gender: gender-classifier (ECAPA-TDNN)
-  - Tone: Audio-Reasoner (Qwen2-Audio)
+  - Tone: Audio-Reasoner (Audio Reasoner: Qwen2-based)
 """
 from dataclasses import dataclass, field
 from typing import Dict, Optional, List

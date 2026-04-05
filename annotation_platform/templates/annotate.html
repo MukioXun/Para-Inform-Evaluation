@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标注 - {{ dir_name }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header h1 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        .header a:hover { opacity: 1; }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .ground-truth {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .ground-truth-label {
+            font-weight: bold;
+            color: #92400e;
+        }
+        .ground-truth-value {
+            background: #f59e0b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .audio-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .audio-card.user {
+            border-left: 4px solid #3b82f6;
+        }
+        .audio-card.model {
+            border-left: 4px solid #8b5cf6;
+        }
+        .audio-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tag {
+            font-size: 0.8em;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .tag.user { background: #dbeafe; color: #1d4ed8; }
+        .tag.model { background: #ede9fe; color: #7c3aed; }
+        audio {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        .transcription {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #1f2937;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 12px;
+        }
+        .model-predictions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .prediction-item {
+            background: #f0f9ff;
+            border-radius: 6px;
+            padding: 6px 12px;
+            text-align: center;
+            font-size: 0.85em;
+        }
+        .prediction-item .label {
+            color: #6b7280;
+            text-transform: uppercase;
+            font-size: 0.7em;
+        }
+        .prediction-item .value {
+            font-weight: 600;
+            color: #0369a1;
+        }
+        .confidence {
+            font-size: 0.7em;
+            color: #9ca3af;
+        }
+
+        /* 内联评分样式 */
+        .inline-rating {
+            background: linear-gradient(135deg, #faf5ff 0%, #fdf4ff 100%);
+            border: 2px solid #e9d5ff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 12px;
+        }
+        .inline-rating-label {
+            font-weight: 600;
+            color: #6b21a8;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .score-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .score-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #6b7280;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .score-btn:hover {
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+            transform: scale(1.1);
+        }
+        .score-btn.selected {
+            color: white;
+            transform: scale(1.05);
+        }
+        .score-btn.selected-1 { background: #ef4444; border-color: #ef4444; }
+        .score-btn.selected-2 { background: #f97316; border-color: #f97316; }
+        .score-btn.selected-3 { background: #eab308; border-color: #eab308; }
+        .score-btn.selected-4 { background: #84cc16; border-color: #84cc16; }
+        .score-btn.selected-5 { background: #22c55e; border-color: #22c55e; }
+
+        .score-hint {
+            font-size: 0.75em;
+            color: #9ca3af;
+            margin-left: auto;
+        }
+
+        /* 用户评分区域 */
+        .user-rating-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .user-rating-item {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .user-rating-item .title {
+            font-weight: 600;
+            color: #0369a1;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .user-rating-item .prediction {
+            font-size: 0.85em;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        .user-rating-item .prediction strong {
+            color: #0369a1;
+        }
+
+        /* 底部操作栏 */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 2px solid #e5e7eb;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 100;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+
+        .success-msg {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d1fae5;
+            color: #059669;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 200;
+            display: none;
+            font-weight: 600;
+        }
+
+        /* 最佳模型选择 */
+        .best-model-select {
+            background: #fef3c7;
+            border: 2px solid #fcd34d;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .best-model-select label {
+            font-weight: 600;
+            color: #92400e;
+        }
+        .best-model-select select {
+            margin-left: 10px;
+            padding: 8px 15px;
+            border: 2px solid #fcd34d;
+            border-radius: 6px;
+            font-size: 1em;
+            background: white;
+        }
+
+        /* 占位空间 */
+        .spacer {
+            height: 80px;
+        }
+
+        /* 备注 */
+        .notes-section {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .notes-section textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.95em;
+            resize: vertical;
+        }
+        .notes-section textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/category/{{ category }}">← 返回列表</a>
+        <h1>{{ dir_name }}</h1>
+    </div>
+
+    <div class="success-msg" id="successMsg">✓ 标注已保存！</div>
+
+    <div class="container">
+        <!-- Ground Truth -->
+        <div class="ground-truth">
+            <span class="ground-truth-label">🏷️ Ground Truth:</span>
+            <span class="ground-truth-value">{{ eval_data.label }}</span>
+            <span style="color: #92400e; font-size: 0.9em;">({{ eval_data.category }})</span>
+        </div>
+
+        <!-- 用户音频 -->
+        <div class="section">
+            <h2 class="section-title">🎤 用户输入音频</h2>
+
+            <div class="audio-card user">
+                <div class="audio-label">
+                    <span class="tag user">USER</span>
+                    用户语音
+                </div>
+                <audio controls id="userAudio">
+                    <source src="/audio/{{ category }}/{{ dir_name }}/user.wav" type="audio/wav">
+                </audio>
+                {% if eval_data.pairs and eval_data.pairs[0].input.annotation.ASR %}
+                <div class="transcription">
+                    {{ eval_data.pairs[0].input.annotation.ASR }}
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- 用户属性识别评分 - 就在用户音频下方 -->
+            <div class="user-rating-section">
+                <div class="user-rating-item">
+                    <div class="title">😊 情感识别评分</div>
+                    <div class="prediction">
+                        模型预测: <strong>{{ eval_data.pairs[0].input.annotation.EMO.emotion }}</strong>
+                        <span class="confidence">({{ (eval_data.pairs[0].input.annotation.EMO.confidence * 100) | round(1) }}%)</span>
+                    </div>
+                    <div class="score-row" data-name="user_emotion_score">
+                        <button type="button" class="score-btn" data-score="1">1</button>
+                        <button type="button" class="score-btn" data-score="2">2</button>
+                        <button type="button" class="score-btn" data-score="3">3</button>
+                        <button type="button" class="score-btn" data-score="4">4</button>
+                        <button type="button" class="score-btn" data-score="5">5</button>
+                        <span class="score-hint">1错→5对</span>
+                    </div>
+                </div>
+
+                <div class="user-rating-item">
+                    <div class="title">👤 年龄识别评分</div>
+                    <div class="prediction">
+                        模型预测: <strong>{{ eval_data.pairs[0].input.annotation.AGE.age_group }}</strong>
+                        <span class="confidence">({{ (eval_data.pairs[0].input.annotation.AGE.confidence * 100) | round(0) }}%)</span>
+                    </div>
+                    <div class="score-row" data-name="user_age_score">
+                        <button type="button" class="score-btn" data-score="1">1</button>
+                        <button type="button" class="score-btn" data-score="2">2</button>
+                        <button type="button" class="score-btn" data-score="3">3</button>
+                        <button type="button" class="score-btn" data-score="4">4</button>
+                        <button type="button" class="score-btn" data-score="5">5</button>
+                        <span class="score-hint">1错→5对</span>
+                    </div>
+                </div>
+
+                <div class="user-rating-item">
+                    <div class="title">⚧ 性别识别评分</div>
+                    <div class="prediction">
+                        模型预测: <strong>{{ eval_data.pairs[0].input.annotation.GND.gender }}</strong>
+                        <span class="confidence">({{ (eval_data.pairs[0].input.annotation.GND.confidence * 100) | round(1) }}%)</span>
+                    </div>
+                    <div class="score-row" data-name="user_gender_score">
+                        <button type="button" class="score-btn" data-score="1">1</button>
+                        <button type="button" class="score-btn" data-score="2">2</button>
+                        <button type="button" class="score-btn" data-score="3">3</button>
+                        <button type="button" class="score-btn" data-score="4">4</button>
+                        <button type="button" class="score-btn" data-score="5">5</button>
+                        <span class="score-hint">1错→5对</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模型响应音频 + 即时评分 -->
+        <div class="section">
+            <h2 class="section-title">🔊 模型响应 ({{ eval_data.pairs | length }} 个)</h2>
+
+            <!-- 最佳模型选择 -->
+            <div class="best-model-select">
+                <label>🏆 最佳响应模型:</label>
+                <select name="best_model" id="best_model">
+                    <option value="">-- 请选择 --</option>
+                    {% for pair in eval_data.pairs %}
+                    <option value="{{ pair.output.model }}">{{ pair.output.model }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            {% for pair in eval_data.pairs %}
+            <div class="audio-card model">
+                <div class="audio-label">
+                    <span class="tag model">{{ pair.output.model | upper }}</span>
+                    模型响应
+                </div>
+
+                <audio controls>
+                    <source src="/audio/{{ category }}/{{ dir_name }}/{{ pair.output.file }}" type="audio/wav">
+                </audio>
+
+                <div class="transcription">
+                    {{ pair.output.annotation.ASR }}
+                </div>
+
+                <div class="model-predictions">
+                    <div class="prediction-item">
+                        <span class="label">情感</span>
+                        <span class="value">{{ pair.output.annotation.EMO.emotion }}</span>
+                    </div>
+                    <div class="prediction-item">
+                        <span class="label">年龄</span>
+                        <span class="value">{{ pair.output.annotation.AGE.age_group }}</span>
+                    </div>
+                    <div class="prediction-item">
+                        <span class="label">性别</span>
+                        <span class="value">{{ pair.output.annotation.GND.gender }}</span>
+                    </div>
+                </div>
+
+                <!-- 即时评分区域 -->
+                <div class="inline-rating">
+                    <div class="inline-rating-label">📝 为此响应评分</div>
+                    <div class="score-row" data-name="model_{{ pair.output.model | replace('.', '_') }}_score">
+                        <button type="button" class="score-btn" data-score="1">1</button>
+                        <button type="button" class="score-btn" data-score="2">2</button>
+                        <button type="button" class="score-btn" data-score="3">3</button>
+                        <button type="button" class="score-btn" data-score="4">4</button>
+                        <button type="button" class="score-btn" data-score="5">5</button>
+                        <span class="score-hint">1差→5好</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- 整体评估 -->
+        <div class="section">
+            <h2 class="section-title">📊 整体评估</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div class="audio-card" style="border-left: 4px solid #10b981;">
+                    <div class="audio-label" style="color: #059669;">😊 响应情感适配度</div>
+                    <p style="font-size: 0.9em; color: #6b7280; margin-bottom: 10px;">
+                        响应情感是否与用户情感状态匹配
+                    </p>
+                    <div class="score-row" data-name="response_emotion_fit_score">
+                        <button type="button" class="score-btn" data-score="1">1</button>
+                        <button type="button" class="score-btn" data-score="2">2</button>
+                        <button type="button" class="score-btn" data-score="3">3</button>
+                        <button type="button" class="score-btn" data-score="4">4</button>
+                        <button type="button" class="score-btn" data-score="5">5</button>
+                        <span class="score-hint">1不适配→5完美</span>
+                    </div>
+                </div>
+
+                <div class="audio-card" style="border-left: 4px solid #f59e0b;">
+                    <div class="audio-label" style="color: #d97706;">⭐ 整体响应质量</div>
+                    <p style="font-size: 0.9em; color: #6b7280; margin-bottom: 10px;">
+                        综合考虑自然度、相关性和有用性
+                    </p>
+                    <div class="score-row" data-name="response_quality_score">
+                        <button type="button" class="score-btn" data-score="1">1</button>
+                        <button type="button" class="score-btn" data-score="2">2</button>
+                        <button type="button" class="score-btn" data-score="3">3</button>
+                        <button type="button" class="score-btn" data-score="4">4</button>
+                        <button type="button" class="score-btn" data-score="5">5</button>
+                        <span class="score-hint">1很差→5很好</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 备注 -->
+            <div class="notes-section" style="margin-top: 20px;">
+                <label style="font-weight: 600; color: #374151; margin-bottom: 8px; display: block;">📝 备注说明 (可选)</label>
+                <textarea name="notes" rows="3" placeholder="如有特殊情况或观察，请在此记录..."></textarea>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+    </div>
+
+    <!-- 底部固定操作栏 -->
+    <div class="bottom-bar">
+        <button class="btn btn-secondary" onclick="window.location.href='/category/{{ category }}'">← 返回列表</button>
+        <button class="btn btn-primary" id="submitBtn" onclick="submitAnnotation()">💾 保存标注</button>
+    </div>
+
+    <script>
+        // 分数按钮点击处理
+        document.querySelectorAll('.score-row').forEach(row => {
+            const buttons = row.querySelectorAll('.score-btn');
+            const name = row.dataset.name;
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 移除其他选中状态
+                    buttons.forEach(b => {
+                        b.classList.remove('selected', 'selected-1', 'selected-2', 'selected-3', 'selected-4', 'selected-5');
+                    });
+
+                    // 添加选中状态
+                    const score = this.dataset.score;
+                    this.classList.add('selected', `selected-${score}`);
+
+                    // 存储数据
+                    row.dataset.value = score;
+                });
+            });
+        });
+
+        // 加载已有标注
+        const existingAnnotation = {{ existing_annotation | tojson | safe if existing_annotation else 'null' }};
+
+        if (existingAnnotation && existingAnnotation.annotations) {
+            const ann = existingAnnotation.annotations;
+
+            // 加载分数评分
+            for (const [key, value] of Object.entries(ann)) {
+                if (key.endsWith('_score') && value) {
+                    const row = document.querySelector(`[data-name="${key}"]`);
+                    if (row) {
+                        const btn = row.querySelector(`[data-score="${value}"]`);
+                        if (btn) btn.click();
+                    }
+                }
+            }
+
+            // 加载下拉选择
+            if (ann.best_model) {
+                document.getElementById('best_model').value = ann.best_model;
+            }
+
+            // 加载备注
+            if (ann.notes) {
+                document.querySelector('[name="notes"]').value = ann.notes;
+            }
+        }
+
+        // 提交标注
+        async function submitAnnotation() {
+            const annotations = {};
+
+            // 收集分数评分
+            document.querySelectorAll('.score-row').forEach(row => {
+                const name = row.dataset.name;
+                const value = row.dataset.value;
+                if (name && value) {
+                    annotations[name] = parseInt(value);
+                }
+            });
+
+            // 收集其他字段
+            annotations.best_model = document.getElementById('best_model').value || '';
+            annotations.notes = document.querySelector('[name="notes"]').value || '';
+
+            const payload = {
+                category: '{{ category }}',
+                dir_name: '{{ dir_name }}',
+                ground_truth: '{{ eval_data.label }}',
+                annotations: annotations,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch('/api/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    document.getElementById('successMsg').style.display = 'block';
+                    setTimeout(() => {
+                        window.location.href = '/category/{{ category }}';
+                    }, 1500);
+                }
+            } catch (err) {
+                alert('保存失败: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>
