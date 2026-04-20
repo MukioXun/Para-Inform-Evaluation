@@ -1,0 +1,20 @@
+{
+  "category": "age",
+  "dir_name": "04-18-05-07_10_littlekid",
+  "ground_truth": "littlekid",
+  "annotations": {
+    "user_emotion_score": 5,
+    "user_age_score": 5,
+    "user_gender_score": 1,
+    "model_glm4_score": 1,
+    "model_gpt-4o-voice-mode_score": 1,
+    "model_original_score": 1,
+    "model_qwen2_5_score": 1,
+    "model_rl_real_all_score": 5,
+    "response_emotion_fit_score": 4,
+    "response_quality_score": 2,
+    "best_model": "rl_real_all",
+    "notes": ""
+  },
+  "timestamp": "2026-04-05T09:05:28.397Z"
+}

@@ -1,0 +1,121 @@
+{
+  "file": "04-23-03-22_27_sarcastic.json",
+  "category": "sarcasm",
+  "label": "sarcastic",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "It's so thoughtful of you to give me every possible answer at once.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "谢谢你的理解,有时候我会尽量提供多种可能性,这样你可以根据自己的需求选择。如果你有更具体的问题或者想要更详细的解答,随时告诉我哦!",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a generally even pace. There are no noticeable pauses or hesitations. The pitch is relatively stable, with no significant variations in intonation. The volume is moderate, neither too loud nor too soft. The speaker's voice sounds confident and composed.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent's response is in Chinese, while the user's speech is in English, creating a language mismatch that prevents proper understanding of the user's emotion, sarcasm, and intent. The agent did not address the user's actual message or emotional tone.\n\nThe reason is language mismatch; The score is 1.",
+      "reason": "language mismatch",
+      "score": 1
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "It's so thoughtful of you to give me every possible answer at once.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "I appreciate your comment. Whenever you're ready for a specific answer or a focused response, just let me know. I'd be happy to help with whatever you need, step by step.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a generally even pace. There are no noticeable pauses or hesitations. The pitch is relatively stable, with no significant variations in intonation. The volume is moderate, neither particularly loud nor soft. The speaker's voice sounds confident and composed.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent's response is polite and professional but does not fully acknowledge or respond to the user's sarcasm or emotional tone. It lacks a more empathetic or nuanced reaction to the user's \"happy\" emotion, which could have been met with a more warm or engaging reply. The speaking style is appropriate but generic, without tailored warmth for a senior female speaker.  \nThe reason is <lacks full recognition of sarcasm and emotional nuance>; The score is <3>.",
+      "reason": "The agent's response is polite and professional but does not fully acknowledge or respond to the user's sarcasm or emotional tone. It lacks a more empathetic or nuanced reaction to the user's \"happy\" ",
+      "score": 3
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "It's so thoughtful of you to give me every possible answer at once.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "I am happy to help, but I need more information. What's your question?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally calm and measured, but there are subtle variations in pitch and intensity. The speech rate is moderate, with a few pauses between phrases. The speaker's voice is relatively soft, but there are moments where the volume increases slightly, suggesting a degree of emphasis or urgency. The speaker's voice is clear and understandable.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The user's statement is sarcastic, but the agent fails to recognize this and responds in a neutral, straightforward manner. The agent does not adjust its tone or content to reflect understanding of the user's emotion or sarcasm. While the response is polite and appropriate in content, it lacks emotional awareness and empathy.  \nThe reason is **lacks recognition of sarcasm and emotional nuance**; The score is **2**.",
+      "reason": "The user's statement is sarcastic, but the agent fails to recognize this and responds in a neutral, straightforward manner. The agent does not adjust its tone or content to reflect understanding of th",
+      "score": 2
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "It's so thoughtful of you to give me every possible answer at once.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "聽起來您有點沮喪呢,發生什麼事了嗎?想聊聊看嗎?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is gentle and inquisitive. The speaker's speech rate is moderate, with a slight pause between phrases. The speaker's pitch is relatively stable, with a slight rise at the end of the phrase. The speaker's volume is moderate, without any significant fluctuations. The speaker's voice sounds calm and reassuring.",
+        "model": "original"
+      },
+      "raw_response": "The agent misinterprets the user's emotion (happy/sarcastic) as sad, leading to an inappropriate response. The tone is overly gentle and inquisitive, not matching the user's sarcastic and happy intent. The score is 2.",
+      "reason": "The agent misinterprets the user's emotion (happy/sarcastic) as sad, leading to an inappropriate response. The tone is overly gentle and inquisitive, not matching the user's sarcastic and happy intent",
+      "score": 2
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "It's so thoughtful of you to give me every possible answer at once.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "Well, I'm just trying to be helpful. You know, sometimes it's easier to have all the options right there. So, what's next? Do you have any other questions?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the initial phrase. The pitch is relatively stable, with a slight rise at the end of the phrase. The volume is moderate, without any significant fluctuations. The speaker's voice sounds calm and collected.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The user's statement is sarcastic, but the agent responds in a neutral, helpful manner without acknowledging or addressing the sarcasm. The agent's tone is calm and appropriate, but it doesn't reflect the user's emotion or adjust to the sarcastic undertone. The response is polite but lacks emotional nuance.\n\nThe reason is <fails to acknowledge sarcasm and lacks emotional nuance>; The score is <3>.",
+      "reason": "The user's statement is sarcastic, but the agent responds in a neutral, helpful manner without acknowledging or addressing the sarcasm. The agent's tone is calm and appropriate, but it doesn't reflect",
+      "score": 3
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "It's so thoughtful of you to give me every possible answer at once.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "I'm sorry if my response was overwhelming. I can try to be more concise and focus on the most important information.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause between phrases. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The intensity is moderate, without any extreme fluctuations. The speaker's voice sounds calm and controlled.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent did not recognize the user's sarcasm and responded in a way that does not align with the user's emotional tone. The response is overly formal and lacks empathy for the user's actual sentiment.\n\nThe reason is \"Failed to recognize sarcasm and mismatched emotional tone\"; The score is 2.",
+      "reason": "\"Failed to recognize sarcasm and mismatched emotional tone\"",
+      "score": 2
+    }
+  ]
+}

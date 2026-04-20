@@ -3,8 +3,6 @@ ER标注器 - Emotion2Vec (FunASR)
 情感识别，使用FunASR的emotion2vec模型
 """
 import os
-import torch
-import librosa
 import numpy as np
 from typing import Dict, Any, List
 from pathlib import Path
@@ -17,43 +15,18 @@ class Emotion2VecAnnotator(BaseAnnotator):
 
     TASK_NAME = "ER"
 
-    # emotion2vec_plus_large 官方情感标签映射 (0-8)
-    EMOTION_MAP = {
-        0: "angry",
-        1: "disgusted",
-        2: "fearful",
-        3: "happy",
-        4: "neutral",
-        5: "other",
-        6: "sad",
-        7: "surprised",
-        8: "unknown"
+    # 情感名称到ID的映射
+    EMOTION_ID_MAP = {
+        "angry": 0,
+        "disgusted": 1,
+        "fearful": 2,
+        "happy": 3,
+        "neutral": 4,
+        "other": 5,
+        "sad": 6,
+        "surprised": 7,
+        "unknown": 8
     }
-
-    # 中文情感映射
-    EMOTION_CN_MAP = {
-        "生气": "angry",
-        "愤怒": "angry",
-        "高兴": "happy",
-        "开心": "happy",
-        "快乐": "happy",
-        "中性": "neutral",
-        "平静": "neutral",
-        "悲伤": "sad",
-        "伤心": "sad",
-        "难过": "sad",
-        "恐惧": "fearful",
-        "害怕": "fearful",
-        "厌恶": "disgusted",
-        "讨厌": "disgusted",
-        "惊讶": "surprised",
-        "吃惊": "surprised",
-        "其他": "other",
-        "未知": "unknown"
-    }
-
-    # 情感类别列表
-    EMOTION_CLASSES = ["angry", "disgusted", "fearful", "happy", "neutral", "other", "sad", "surprised", "unknown"]
 
     def load_model(self):
         """加载emotion2vec模型"""
@@ -92,22 +65,18 @@ class Emotion2VecAnnotator(BaseAnnotator):
                 print(f"  [ER] Will use fallback mode (random emotion)")
                 self.model = None
 
-        self.emotion_classes = self.config.get('emotion_classes', self.EMOTION_CLASSES)
-
     def annotate(self, audio_path: str) -> Dict[str, Any]:
         """执行情感识别"""
         # 检查模型是否加载成功
         if self.model is None:
             return self._fallback_annotate(audio_path)
 
-        # 加载音频
-        wav, sr = librosa.load(audio_path, sr=self.sample_rate)
-        wav_tensor = torch.from_numpy(wav).unsqueeze(0).float()
-
-        # FunASR推理
+        # FunASR推理 - 直接传入音频文件路径
         result = self.model.generate(
-            input=wav_tensor,
-            output_dir=None
+            audio_path,
+            output_dir=None,
+            granularity="utterance",
+            extract_embedding=False
         )
 
         # 解析结果
@@ -136,7 +105,7 @@ class Emotion2VecAnnotator(BaseAnnotator):
                     primary_emotion = "unknown"
 
                 # 获取emotion_id
-                emotion_id = self._get_emotion_id(primary_emotion)
+                emotion_id = self.EMOTION_ID_MAP.get(primary_emotion, 8)
 
                 # 构建分布
                 for i, label in enumerate(labels):
@@ -177,24 +146,12 @@ class Emotion2VecAnnotator(BaseAnnotator):
         }
 
     def _parse_emotion_label(self, raw_label: str) -> str:
-        """解析情感标签，支持中英文格式"""
+        """解析情感标签，提取英文名称"""
         if '/' in raw_label:
             # 格式: "生气/angry"
-            cn_part, en_part = raw_label.split('/', 1)
+            _, en_part = raw_label.split('/', 1)
             return en_part.lower().strip()
-        else:
-            label = raw_label.strip()
-            # 检查是否是中文
-            if label in self.EMOTION_CN_MAP:
-                return self.EMOTION_CN_MAP[label]
-            return label.lower()
-
-    def _get_emotion_id(self, emotion: str) -> int:
-        """根据情感名称获取ID"""
-        for id, name in self.EMOTION_MAP.items():
-            if name == emotion.lower():
-                return id
-        return 8  # unknown
+        return raw_label.lower().strip()
 
     def _map_to_vad(self, emotion: str) -> tuple:
         """将离散情感映射到VAD维度 (valence, arousal)"""

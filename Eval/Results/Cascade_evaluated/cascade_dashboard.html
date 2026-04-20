@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade 自动评估结果分析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .stat-card h3 {
+            font-size: 2.5em;
+            color: #8b5cf6;
+            margin-bottom: 5px;
+        }
+        .stat-card p { color: #666; }
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .section-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+        .chart-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 15px;
+        }
+        .chart-card h4 {
+            color: #374151;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .chart-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+            border: 2px solid #8b5cf6;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .highlight-box h4 {
+            color: #5b21b6;
+            margin-bottom: 10px;
+        }
+        .highlight-box ul {
+            color: #6b21a8;
+            padding-left: 20px;
+        }
+        .highlight-box li { margin: 5px 0; }
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .score-table th, .score-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .score-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #374151;
+        }
+        .score-table td { color: #4b5563; }
+        .score-high { color: #059669; font-weight: bold; }
+        .score-low { color: #dc2626; font-weight: bold; }
+        .score-mid { color: #d97706; font-weight: bold; }
+        .comparison-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .comparison-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Cascade 自动评估结果分析</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>48</h3>
+                <p>总评估数</p>
+            </div>
+            <div class="stat-card">
+                <h3>10</h3>
+                <p>Age 样本</p>
+            </div>
+            <div class="stat-card">
+                <h3>20</h3>
+                <p>Emotion 样本</p>
+            </div>
+            <div class="stat-card">
+                <h3>10</h3>
+                <p>Gender 样本</p>
+            </div>
+            <div class="stat-card">
+                <h3>8</h3>
+                <p>Sarcasm 样本</p>
+            </div>
+        </div>
+
+        <!-- 关键发现 -->
+        <div class="highlight-box">
+            <h4>🔍 Cascade 自动评估关键发现</h4>
+            <ul>
+                <li><strong>所有模型表现稳健</strong>：理想场景与挑战场景的性能差距均小于0.7，表明Cascade评估下模型鲁棒性较好</li>
+                <li><strong>Qwen2.5 在理想场景表现最佳</strong>：理想场景得分 3.75，但差距较大 (0.68)</li>
+                <li><strong>RL-Real-All 最稳健</strong>：性能差距仅 0.18，在挑战场景也有 3.20 分</li>
+                <li><strong>GPT-4o 表现均衡</strong>：理想场景 3.32，挑战场景 3.00，差距仅 0.32</li>
+            </ul>
+        </div>
+
+        <!-- 与人工标注对比 -->
+        <div class="comparison-box">
+            <h4>📊 Cascade vs 人工标注对比</h4>
+            <table class="score-table">
+                <tr>
+                    <th>评估方式</th>
+                    <th>RL-Real-All (理想)</th>
+                    <th>RL-Real-All (挑战)</th>
+                    <th>差距</th>
+                    <th>结论</th>
+                </tr>
+                <tr>
+                    <td><strong>Cascade 自动评估</strong></td>
+                    <td class="score-mid">3.38</td>
+                    <td class="score-mid">3.20</td>
+                    <td class="score-high">0.18</td>
+                    <td>稳健</td>
+                </tr>
+                <tr>
+                    <td><strong>人工标注</strong></td>
+                    <td class="score-high">4.77</td>
+                    <td class="score-high">4.98</td>
+                    <td class="score-high">-0.21</td>
+                    <td>最稳健</td>
+                </tr>
+            </table>
+            <p style="color: #78350f; margin-top: 15px;">
+                <strong>分析：</strong>人工标注对 RL-Real-All 的评分普遍更高（4.77-4.98），而 Cascade 评分较保守（3.20-3.38）。
+                两种评估方式都确认 RL-Real-All 是最稳健的模型。
+            </p>
+        </div>
+
+        <!-- 热力图 -->
+        <div class="section">
+            <h2 class="section-title">🔥 场景-模型热力图</h2>
+            <div style="text-align: center;">
+                <img src="visualization/cascade_scenario_heatmap.png" alt="Heatmap" style="max-width: 1000px; border-radius: 12px;">
+            </div>
+        </div>
+
+        <!-- 理想 vs 挑战 -->
+        <div class="section">
+            <h2 class="section-title">⚡ 理想场景 vs 挑战场景</h2>
+
+            <div style="text-align: center;">
+                <img src="visualization/cascade_ideal_challenge.png" alt="Comparison" style="max-width: 800px; border-radius: 12px;">
+            </div>
+
+            <table class="score-table" style="margin-top: 20px;">
+                <tr>
+                    <th>模型</th>
+                    <th>理想场景</th>
+                    <th>挑战场景</th>
+                    <th>差距</th>
+                    <th>鲁棒性</th>
+                </tr>
+                <tr>
+                    <td><strong>GLM4</strong></td>
+                    <td class="score-low">2.63</td>
+                    <td class="score-low">2.61</td>
+                    <td class="score-high">0.03</td>
+                    <td style="color: #059669; font-weight: bold;">ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o</strong></td>
+                    <td class="score-mid">3.32</td>
+                    <td class="score-mid">3.00</td>
+                    <td class="score-high">0.32</td>
+                    <td style="color: #059669; font-weight: bold;">ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>LlamaOmni2</strong></td>
+                    <td class="score-low">2.80</td>
+                    <td class="score-low">2.31</td>
+                    <td class="score-high">0.49</td>
+                    <td style="color: #059669; font-weight: bold;">ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>Original</strong></td>
+                    <td class="score-mid">2.95</td>
+                    <td class="score-low">2.59</td>
+                    <td class="score-high">0.36</td>
+                    <td style="color: #059669; font-weight: bold;">ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>Qwen2.5</strong></td>
+                    <td class="score-mid">3.75</td>
+                    <td class="score-mid">3.07</td>
+                    <td class="score-mid">0.68</td>
+                    <td style="color: #d97706; font-weight: bold;">MODERATE</td>
+                </tr>
+                <tr>
+                    <td><strong>RL-Real-All</strong></td>
+                    <td class="score-mid">3.38</td>
+                    <td class="score-mid">3.20</td>
+                    <td class="score-high">0.18</td>
+                    <td style="color: #059669; font-weight: bold;">ROBUST</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 鲁棒性分析 -->
+        <div class="section">
+            <h2 class="section-title">🛡️ 模型鲁棒性分析</h2>
+            <div style="text-align: center;">
+                <img src="visualization/cascade_performance_gap.png" alt="Gap" style="max-width: 800px; border-radius: 12px;">
+            </div>
+        </div>
+
+        <!-- 各类别详情 -->
+        <div class="section">
+            <h2 class="section-title">📊 各类别详细分析</h2>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h4>Age 类别</h4>
+                    <img src="visualization/cascade_age_heatmap.png" alt="Age">
+                </div>
+                <div class="chart-card">
+                    <h4>Emotion 类别</h4>
+                    <img src="visualization/cascade_emotion_heatmap.png" alt="Emotion">
+                </div>
+                <div class="chart-card">
+                    <h4>Sarcasm 类别</h4>
+                    <img src="visualization/cascade_sarcasm_heatmap.png" alt="Sarcasm">
+                </div>
+                <div class="chart-card">
+                    <h4>Gender 类别</h4>
+                    <img src="visualization/cascade_gender_heatmap.png" alt="Gender">
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #666; margin-top: 30px;">
+            Cascade 自动评估 | 评估时间: 2026-04-04
+        </p>
+    </div>
+</body>
+</html>

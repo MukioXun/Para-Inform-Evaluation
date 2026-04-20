@@ -42,29 +42,6 @@ sys.path.insert(0, str(PROJECT_ROOT))
 class EmotionAnnotator:
     """情感标注器 - 使用 emotion2vec_plus_large"""
 
-    EMOTION_MAP = {
-        0: "angry",
-        1: "disgusted",
-        2: "fearful",
-        3: "happy",
-        4: "neutral",
-        5: "other",
-        6: "sad",
-        7: "surprised",
-        8: "unknown"
-    }
-
-    EMOTION_CN_MAP = {
-        "生气": "angry", "愤怒": "angry",
-        "高兴": "happy", "开心": "happy", "快乐": "happy",
-        "中性": "neutral", "平静": "neutral",
-        "悲伤": "sad", "伤心": "sad", "难过": "sad",
-        "恐惧": "fearful", "害怕": "fearful",
-        "厌恶": "disgusted", "讨厌": "disgusted",
-        "惊讶": "surprised", "吃惊": "surprised",
-        "其他": "other", "未知": "unknown"
-    }
-
     def __init__(self, model_path: str, device: str = "cuda"):
         self.model_path = model_path
         self.device = device
@@ -76,14 +53,9 @@ class EmotionAnnotator:
         """加载 emotion2vec 模型"""
         try:
             from funasr import AutoModel
-            import librosa
-            import torch
             import numpy as np
 
             print(f"[EMO] Loading emotion2vec from: {self.model_path}")
-
-            self.librosa = librosa
-            self.torch = torch
             self.np = np
 
             self.model = AutoModel(
@@ -110,13 +82,14 @@ class EmotionAnnotator:
             return {"emotion": "unknown", "confidence": 0.0, "error": "model not loaded"}
 
         try:
-            # 加载音频
-            wav, sr = self.librosa.load(audio_path, sr=16000)
-            wav_tensor = self.torch.from_numpy(wav).unsqueeze(0).float()
-
-            # 推理
+            # 推理 - 直接传入音频文件路径
             with self._lock:
-                result = self.model.generate(input=wav_tensor, output_dir=None)
+                result = self.model.generate(
+                    audio_path,
+                    output_dir=None,
+                    granularity="utterance",
+                    extract_embedding=False
+                )
 
             # 解析结果
             primary_emotion = "unknown"
@@ -159,15 +132,11 @@ class EmotionAnnotator:
             return {"emotion": "error", "confidence": 0.0, "error": str(e)}
 
     def _parse_emotion_label(self, raw_label: str) -> str:
-        """解析情感标签"""
+        """解析情感标签，提取英文名称"""
         if '/' in raw_label:
             _, en_part = raw_label.split('/', 1)
             return en_part.lower().strip()
-        else:
-            label = raw_label.strip()
-            if label in self.EMOTION_CN_MAP:
-                return self.EMOTION_CN_MAP[label]
-            return label.lower()
+        return raw_label.lower().strip()
 
 
 # ================= 数据处理函数 =================

@@ -1,0 +1,121 @@
+{
+  "file": "04-24-22-59_24_disgust.json",
+  "category": "emotion",
+  "label": "disgust",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "disgust",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, without any noticeable strain or weakness. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's exciting! Have you tried any of the new dishes yet? I'm curious to know if there are any stand-outs.",
+        "tone": "The audio features a single speaker. The speech is relatively clear, with no obvious impediments. The speaker's voice has a moderate pitch and a generally even tone. There are no apparent breaks or hesitations in the speech. The speaker's voice is clear and steady.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent's response is overly positive and enthusiastic in tone, which does not match the user's expressed emotion of disgust. The response lacks sensitivity to the user's possible negative sentiment about the new menu. While the content is neutral and open-ended, the tone feels mismatched and insincere given the context.\n\nThe reason is mismatched tone with user's emotion; The score is 2.",
+      "reason": "mismatched tone with user's emotion",
+      "score": 2
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "disgust",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, without any noticeable strain or weakness. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's exciting. Exploring new dishes can be a lot of fun. What kind of cuisine do they serve? And is there a specific dish you're excited to try from the new menu?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause between phrases. The pitch is relatively stable, with a slight rise in intonation at the end of the first phrase, \"That's exciting,\" and a slight fall in intonation at the end of the second phrase, \"Exploring new dishes can be a lot of fun.\" The intensity is moderate, with no significant changes in volume. The speaker's voice sounds confident and enthusiastic.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The reason is the agent fails to recognize the user's emotion of disgust and responds with an overly positive tone, mismatching the user's sentiment. The score is 2.",
+      "reason": "The reason is the agent fails to recognize the user's emotion of disgust and responds with an overly positive tone, mismatching the user's sentiment. The score is",
+      "score": 2
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "disgust",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, without any noticeable strain or weakness. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's great! What's your favorite dish on the new menu?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech. The speaker's voice sounds confident and steady.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is overly focused on describing the tone of the speech rather than addressing the user's message or emotional context. It fails to acknowledge the user's emotion (disgust) or consider the user's age and gender in its response. The content is neutral but not empathetic or appropriate given the context.\n\nThe reason is <fails to address user's emotion or provide relevant response>; The score is <2>.",
+      "reason": "The agent's response is overly focused on describing the tone of the speech rather than addressing the user's message or emotional context. It fails to acknowledge the user's emotion (disgust) or cons",
+      "score": 2
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "disgust",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, without any noticeable strain or weakness. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "Oh, that's exciting. What's new on the menu that's called your eye?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally upbeat and positive. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively high, and there are no noticeable pauses or hesitations. The speaker's voice sounds confident and enthusiastic.",
+        "model": "original"
+      },
+      "raw_response": "The agent misinterprets the user's emotion (disgust) as positive and fails to recognize the potential sarcasm. The response is overly upbeat and does not align with the user's likely sentiment. The tone is inappropriate for the context.\n\nThe reason is mismatched emotion and tone; The score is 2.",
+      "reason": "mismatched emotion and tone",
+      "score": 2
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "disgust",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, without any noticeable strain or weakness. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's great! What's on the new menu? I'm really interested to hear about it. You should tell me more so we can talk about it.",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally upbeat and positive. The speech rate is moderate, with a slight emphasis on certain words, suggesting a conversational style. The pitch is relatively high, and there are some variations in pitch, indicating a degree of expressiveness. The volume is moderate, and there are no noticeable breaks or hesitations in the speech. The speaker sounds confident and enthusiastic.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent's response is overly positive and enthusiastic in a context where the user expressed \"disgust,\" indicating a mismatch in emotion understanding. The tone does not align with the user's likely negative sentiment. The response is generic and lacks sensitivity to the user's emotional state.\n\nThe reason is mismatched emotion; The score is 2.",
+      "reason": "mismatched emotion",
+      "score": 2
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "disgust",
+        "sarcasm": "unknown",
+        "age": "senior",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The vocal intensity is moderate, without any noticeable strain or weakness. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "I'm sorry to hear that the new menu isn't meeting your expectations. Would you like to talk about what's changed or maybe find some recommendations that might be closer to your favorites?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is gentle and empathetic. The speaker's voice is calm and measured, with a moderate pace. The speaker's pitch is relatively stable, with a slight rise and fall in intonation, suggesting a conversational style. The speaker's voice is clear and steady, with no noticeable breaks or hesitations. The speaker's voice is confident and reassuring.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent correctly interprets the user's statement and responds with empathy, but the user's emotion of \"disgust\" is not fully acknowledged or addressed in the response. The tone is appropriate and empathetic, but the content could better reflect the user's possible frustration. The age and gender are not directly relevant to the response, so no mismatch is present.  \nThe reason is <empathy is present but emotion not fully addressed>; The score is <4>.",
+      "reason": "The agent correctly interprets the user's statement and responds with empathy, but the user's emotion of \"disgust\" is not fully acknowledged or addressed in the response. The tone is appropriate and e",
+      "score": 4
+    }
+  ]
+}

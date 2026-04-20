@@ -1,0 +1,121 @@
+{
+  "file": "04-24-22-59_33_sad.json",
+  "category": "emotion",
+  "label": "sad",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the word \"statement.\" The pitch is relatively stable, without significant fluctuations. The volume is moderate, neither particularly loud nor soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is neutral, lacking strong emotional inflection."
+      },
+      "agent_info": {
+        "transcription": "Hmm, that's interesting. Did you notice anything unusual or suspicious on your bank statement? If not, it might be good to keep an eye on your accounts just in case.",
+        "tone": "The audio features a male voice posing a question. The speaker's tone is inquisitive, suggesting a desire to understand the listener's situation. The speech rate is moderate, with a slight pause before the question. The pitch is relatively stable, with a slight rise at the end of the question, indicating a question. The vocal intensity is moderate, suggesting a conversational and not overly assertive tone. There is no obvious tremor or strain in the voice.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent's response is appropriate and neutral, matching the user's emotion. It does not misinterpret or ignore the user's identity cues. The tone is inquisitive and conversational, fitting a middle-aged male user. However, it lacks deeper empathy or personalization.  \nThe reason is neutral and appropriate; The score is 4.",
+      "reason": "neutral and appropriate",
+      "score": 4
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the word \"statement.\" The pitch is relatively stable, without significant fluctuations. The volume is moderate, neither particularly loud nor soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is neutral, lacking strong emotional inflection."
+      },
+      "agent_info": {
+        "transcription": "It's good to keep track of your finances regularly. If there's anything you're unsure about or if something seems off, you might want to reach out to your bank or review your recent transactions to make sure everything looks right. Let me know if I can help you figure out anything specific.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is calm and reassuring. The speech rate is moderate, with a steady rhythm. The pitch is relatively stable, with no significant fluctuations. The volume is moderate, suggesting a conversational setting. There are no noticeable pauses or hesitations. The speaker's voice sounds confident and knowledgeable.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The reason is neutral tone matches user's emotion; no sarcasm detected; age and gender appropriately handled; response is helpful and calm. The score is 5.",
+      "reason": "The reason is neutral tone matches user's emotion; no sarcasm detected; age and gender appropriately handled; response is helpful and calm. The score is",
+      "score": 5
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the word \"statement.\" The pitch is relatively stable, without significant fluctuations. The volume is moderate, neither particularly loud nor soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is neutral, lacking strong emotional inflection."
+      },
+      "agent_info": {
+        "transcription": "That's great. What would you like to do with your balance now?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech. The speaker's voice sounds confident and steady.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is neutral and appropriately open-ended, but it does not fully account for the user's emotion or context. The user's statement is brief and lacks emotional cues, so the agent's tone is generally suitable. However, there is no clear indication that the agent understood the user's neutral emotion or age/gender. The speaking style is consistent but lacks warmth or personalization.\n\nThe reason is <generic response without deep emotional or identity alignment>; The score is 3.",
+      "reason": "<generic response without deep emotional or identity alignment>",
+      "score": 3
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the word \"statement.\" The pitch is relatively stable, without significant fluctuations. The volume is moderate, neither particularly loud nor soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is neutral, lacking strong emotional inflection."
+      },
+      "agent_info": {
+        "transcription": "聽起來你有點擔心啊銀行賬戶的事兒總是讓人緊張",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is calm and measured. There are no noticeable breaks or hesitations in the speech. The speaker's voice is relatively soft and steady. The speaker's voice is clear and easily understandable.",
+        "model": "original"
+      },
+      "raw_response": "The agent misinterprets the user's neutral emotion as concern and adds unnecessary emotional projection. The response is not aligned with the user's neutral tone.  \nThe reason is <misunderstands emotion>; The score is <2>.",
+      "reason": "The agent misinterprets the user's neutral emotion as concern and adds unnecessary emotional projection. The response is not aligned with the user's neutral tone.  \nThe reason is <misunderstands emoti",
+      "score": 2
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the word \"statement.\" The pitch is relatively stable, without significant fluctuations. The volume is moderate, neither particularly loud nor soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is neutral, lacking strong emotional inflection."
+      },
+      "agent_info": {
+        "transcription": "Oh, that's great. What's your balance? Is it what you expected? If you have any questions about it, like if there are some transactions you don't understand, feel free to tell me.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally upbeat and positive. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively high, and there are some variations in intonation. The speaker's voice is clear and steady, with no apparent strain or hesitation.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent's response is polite and open-ended, but it doesn't fully account for the user's neutral emotion or lack of sarcasm. The tone is overly upbeat for a neutral statement, which may feel slightly mismatched. The content is appropriate but lacks depth or personalization.\n\nThe reason is <slightly mismatched tone for neutral emotion>; The score is <3>.",
+      "reason": "The agent's response is polite and open-ended, but it doesn't fully account for the user's neutral emotion or lack of sarcasm. The tone is overly upbeat for a neutral statement, which may feel slightl",
+      "score": 3
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the word \"statement.\" The pitch is relatively stable, without significant fluctuations. The volume is moderate, neither particularly loud nor soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is neutral, lacking strong emotional inflection."
+      },
+      "agent_info": {
+        "transcription": "I'm sorry to hear that your bank balance isn't where you'd like it to be. Would you like to talk about what's going on? Or maybe explore some options together?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is calm and measured. There are no apparent signs of strong emotion, such as excitement, anger, or sadness. The speaker's pace is moderate, neither rushed nor particularly slow. The pitch is relatively stable, without significant fluctuations. The speaker's voice is clear and steady, with no noticeable breaks or hesitations.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent correctly interprets the user's neutral emotion and avoids assuming any negative sentiment. The response is empathetic, open-ended, and appropriate for a middle-aged male. The tone is calm and supportive, matching the user's neutral emotional state. There is no indication of sarcasm, so the agent's response is not misaligned in that regard. The language is natural and suitable for the user's age and gender.\n\nThe reason is <appropriate tone and content for neutral emotion and age/gender>; The score is <5>.",
+      "reason": "The agent correctly interprets the user's neutral emotion and avoids assuming any negative sentiment. The response is empathetic, open-ended, and appropriate for a middle-aged male. The tone is calm a",
+      "score": 5
+    }
+  ]
+}

@@ -280,6 +280,10 @@ def scan_audio_directory(audio_dir: Path) -> List[Dict[str, Any]]:
     """
     扫描音频目录，返回配对列表
 
+    支持两种目录结构:
+    1. 标准结构: audio_dir/category/sample_dir/*.wav (包含 user.wav)
+    2. 简单结构: audio_dir/*.wav (直接包含音频文件)
+
     Returns:
         [
             {
@@ -295,6 +299,30 @@ def scan_audio_directory(audio_dir: Path) -> List[Dict[str, Any]]:
     """
     results = []
 
+    # 检查是否为简单结构 (直接包含 wav 文件)
+    wav_files = list(audio_dir.glob("*.wav"))
+    has_subdirs = any(d.is_dir() for d in audio_dir.iterdir())
+
+    if wav_files and not has_subdirs:
+        # 简单结构: 直接处理 wav 文件
+        print(f"  [Simple mode] Found {len(wav_files)} wav files directly in directory")
+
+        for wav_file in sorted(wav_files):
+            file_name = wav_file.stem  # 不含扩展名
+            category, label = parse_simple_filename(file_name)
+
+            results.append({
+                "category": category,
+                "label": label,
+                "dir_name": file_name,
+                "dir_path": str(audio_dir),
+                "user_audio": wav_file.name,
+                "model_audios": []  # 无模型输出
+            })
+
+        return results
+
+    # 标准结构: category/sample_dir
     for category_dir in audio_dir.iterdir():
         if not category_dir.is_dir():
             continue
@@ -331,6 +359,46 @@ def scan_audio_directory(audio_dir: Path) -> List[Dict[str, Any]]:
                 })
 
     return results
+
+
+def parse_simple_filename(filename: str) -> Tuple[str, str]:
+    """
+    解析简单文件名，提取 category 和 label
+
+    Examples:
+        "adult_default" -> ("age", "adult")
+        "emo_happy" -> ("emotion", "happy")
+        "gender_male" -> ("gender", "male")
+    """
+    parts = filename.lower().split("_")
+    prefix = parts[0] if parts else ""
+
+    # 根据前缀推断 category
+    if prefix in ["adult", "child", "elderly", "teenager", "littlekid"]:
+        return "age", prefix
+    elif prefix in ["emo", "emotion"]:
+        label = parts[1] if len(parts) > 1 else "unknown"
+        return "emotion", label
+    elif prefix in ["gender"]:
+        label = parts[1] if len(parts) > 1 else "unknown"
+        return "gender", label
+    else:
+        # 尝试从整个文件名推断
+        age_labels = ["adult", "littlekid", "child", "elderly", "teenager"]
+        emotion_labels = ["happy", "sad", "angry", "fearful", "disgust", "surprised", "neutral", "digust"]
+        gender_labels = ["male", "female"]
+
+        for label in age_labels:
+            if label in filename.lower():
+                return "age", label
+        for label in emotion_labels:
+            if label in filename.lower():
+                return "emotion", label
+        for label in gender_labels:
+            if label in filename.lower():
+                return "gender", label
+
+        return "unknown", filename
 
 
 # ================= 并行处理 =================
@@ -375,6 +443,37 @@ def process_directory(
     pairs = []
 
     print(f"\n[Processing] {dir_info['dir_name']} ({dir_info['category']}/{dir_info['label']})")
+
+    # 简单结构: 只有单个音频文件，无模型输出
+    if not dir_info['model_audios']:
+        dir_path = Path(dir_info["dir_path"])
+        user_audio_path = dir_path / dir_info["user_audio"]
+
+        print(f"  Annotating: {dir_info['user_audio']}")
+        user_annotation = annotator_manager.annotate_audio(str(user_audio_path))
+
+        pairs.append({
+            "input": {
+                "file": dir_info["user_audio"],
+                "model": "user",
+                "annotation": user_annotation
+            },
+            "output": {
+                "file": "",
+                "model": "",
+                "annotation": {}
+            }
+        })
+        print(f"  ✓ Completed: {dir_info['user_audio']}")
+
+        return DirectoryResult(
+            category=dir_info["category"],
+            label=dir_info["label"],
+            dir_name=dir_info["dir_name"],
+            pairs=pairs
+        )
+
+    # 标准结构: 有模型输出配对
     print(f"  Model audios: {len(dir_info['model_audios'])}")
 
     # 并行处理每个模型配对

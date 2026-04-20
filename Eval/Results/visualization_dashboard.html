@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人工标注结果可视化</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .stat-card h3 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .stat-card p { color: #666; }
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .section-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+        .chart-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 15px;
+        }
+        .chart-card h4 {
+            color: #374151;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .chart-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        .highlight-box ul {
+            color: #78350f;
+            padding-left: 20px;
+        }
+        .highlight-box li { margin: 5px 0; }
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .score-table th, .score-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .score-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #374151;
+        }
+        .score-table td { color: #4b5563; }
+        .score-high { color: #059669; font-weight: bold; }
+        .score-low { color: #dc2626; font-weight: bold; }
+        .score-mid { color: #d97706; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 人工标注结果可视化分析</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>48</h3>
+                <p>总标注数</p>
+            </div>
+            <div class="stat-card">
+                <h3>10</h3>
+                <p>Age 标注</p>
+            </div>
+            <div class="stat-card">
+                <h3>20</h3>
+                <p>Emotion 标注</p>
+            </div>
+            <div class="stat-card">
+                <h3>10</h3>
+                <p>Gender 标注</p>
+            </div>
+            <div class="stat-card">
+                <h3>8</h3>
+                <p>Sarcasm 标注</p>
+            </div>
+        </div>
+
+        <!-- 关键发现 -->
+        <div class="highlight-box">
+            <h4>🔍 关键发现</h4>
+            <ul>
+                <li><strong>RL-Real-All 模型表现最优</strong>：在所有类别中均获得最高分，尤其在讽刺场景 (5.0) 和儿童用户场景 (5.0) 表现完美</li>
+                <li><strong>儿童用户场景挑战大</strong>：其他模型在处理 littlekid 用户时评分仅 1.6-1.75，表现较差</li>
+                <li><strong>讽刺识别能力弱</strong>：除 RL-Real-All 外，所有模型在讽刺场景评分均为 1.0</li>
+                <li><strong>非积极情感处理</strong>：模型在处理 sad/fearful/angry 等非积极情感时评分较低 (2.5-2.9)</li>
+                <li><strong>性别差异</strong>：模型对女性用户响应质量普遍高于男性用户，Qwen2.5 在性别类别表现最差 (1.8-2.4)</li>
+            </ul>
+        </div>
+
+        <!-- Age 分析 -->
+        <div class="section">
+            <h2 class="section-title">📅 Age 类别分析</h2>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h4>Adult 用户 - 模型响应评分</h4>
+                    <img src="visualization/age_adult_model_scores.png" alt="Adult Model Scores">
+                </div>
+                <div class="chart-card">
+                    <h4>LittleKid (Child) 用户 - 模型响应评分</h4>
+                    <img src="visualization/age_littlekid_model_scores.png" alt="LittleKid Model Scores">
+                </div>
+            </div>
+
+            <table class="score-table">
+                <tr>
+                    <th>用户类型</th>
+                    <th>情感识别</th>
+                    <th>年龄识别</th>
+                    <th>性别识别</th>
+                    <th>最佳模型</th>
+                    <th>最佳模型分数</th>
+                </tr>
+                <tr>
+                    <td><strong>Adult</strong></td>
+                    <td class="score-high">5.00</td>
+                    <td class="score-mid">3.80</td>
+                    <td class="score-high">4.60</td>
+                    <td>Qwen2.5 / RL-Real-All</td>
+                    <td class="score-high">4.80</td>
+                </tr>
+                <tr>
+                    <td><strong>LittleKid (Child)</strong></td>
+                    <td class="score-mid">4.00</td>
+                    <td class="score-low">2.80</td>
+                    <td class="score-low">1.40</td>
+                    <td>RL-Real-All</td>
+                    <td class="score-high">5.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Emotion 分析 -->
+        <div class="section">
+            <h2 class="section-title">😊 Emotion 类别分析</h2>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h4>积极情感 (Happy) - 模型响应评分</h4>
+                    <img src="visualization/emotion_positive_model_scores.png" alt="Positive Emotion">
+                </div>
+                <div class="chart-card">
+                    <h4>非积极情感 - 模型响应评分</h4>
+                    <img src="visualization/emotion_non_positive_model_scores.png" alt="Non-Positive Emotion">
+                </div>
+            </div>
+
+            <table class="score-table">
+                <tr>
+                    <th>情感类型</th>
+                    <th>样本数</th>
+                    <th>GLM4</th>
+                    <th>GPT-4o</th>
+                    <th>LlamaOmni2</th>
+                    <th>Original</th>
+                    <th>Qwen2.5</th>
+                    <th>RL-Real-All</th>
+                </tr>
+                <tr>
+                    <td><strong>积极 (Happy)</strong></td>
+                    <td>5</td>
+                    <td class="score-mid">3.80</td>
+                    <td class="score-high">4.60</td>
+                    <td class="score-high">4.40</td>
+                    <td class="score-high">4.80</td>
+                    <td class="score-high">4.40</td>
+                    <td class="score-high">5.00</td>
+                </tr>
+                <tr>
+                    <td><strong>非积极</strong></td>
+                    <td>15</td>
+                    <td class="score-mid">2.67</td>
+                    <td class="score-mid">2.60</td>
+                    <td class="score-mid">2.47</td>
+                    <td class="score-mid">2.86</td>
+                    <td class="score-mid">2.47</td>
+                    <td class="score-high">4.93</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Sarcasm 分析 -->
+        <div class="section">
+            <h2 class="section-title">🎭 Sarcasm 类别分析</h2>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h4>讽刺 (Sarcastic) - 模型响应评分</h4>
+                    <img src="visualization/sarcasm_sarcastic_model_scores.png" alt="Sarcastic">
+                </div>
+                <div class="chart-card">
+                    <h4>真诚 (Sincere) - 模型响应评分</h4>
+                    <img src="visualization/sarcasm_sincere_model_scores.png" alt="Sincere">
+                </div>
+            </div>
+
+            <table class="score-table">
+                <tr>
+                    <th>场景类型</th>
+                    <th>样本数</th>
+                    <th>GLM4</th>
+                    <th>GPT-4o</th>
+                    <th>LlamaOmni2</th>
+                    <th>Original</th>
+                    <th>Qwen2.5</th>
+                    <th>RL-Real-All</th>
+                </tr>
+                <tr>
+                    <td><strong>讽刺 (Sarcastic)</strong></td>
+                    <td>4</td>
+                    <td class="score-low">1.00</td>
+                    <td class="score-low">1.00</td>
+                    <td class="score-low">1.00</td>
+                    <td class="score-low">1.00</td>
+                    <td class="score-low">1.00</td>
+                    <td class="score-high">5.00</td>
+                </tr>
+                <tr>
+                    <td><strong>真诚 (Sincere)</strong></td>
+                    <td>4</td>
+                    <td class="score-mid">4.25</td>
+                    <td class="score-mid">4.00</td>
+                    <td class="score-mid">4.00</td>
+                    <td class="score-mid">4.00</td>
+                    <td class="score-mid">4.00</td>
+                    <td class="score-high">4.50</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Gender 分析 -->
+        <div class="section">
+            <h2 class="section-title">⚧ Gender 类别分析</h2>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h4>模型响应评分 - 按性别分组</h4>
+                    <img src="visualization/gender_model_heatmap.png" alt="Gender Heatmap">
+                </div>
+                <div class="chart-card">
+                    <h4>用户属性识别 - 按性别分组</h4>
+                    <img src="visualization/gender_user_attrs.png" alt="Gender User Attrs">
+                </div>
+            </div>
+
+            <table class="score-table">
+                <tr>
+                    <th>用户性别</th>
+                    <th>样本数</th>
+                    <th>情感识别</th>
+                    <th>年龄识别</th>
+                    <th>性别识别</th>
+                    <th>最佳模型</th>
+                    <th>最佳分数</th>
+                </tr>
+                <tr>
+                    <td><strong>Male</strong></td>
+                    <td>5</td>
+                    <td class="score-high">4.60</td>
+                    <td class="score-mid">3.20</td>
+                    <td class="score-high">4.80</td>
+                    <td>RL-Real-All</td>
+                    <td class="score-high">4.80</td>
+                </tr>
+                <tr>
+                    <td><strong>Female</strong></td>
+                    <td>5</td>
+                    <td class="score-high">4.60</td>
+                    <td class="score-mid">4.40</td>
+                    <td class="score-high">5.00</td>
+                    <td>RL-Real-All</td>
+                    <td class="score-high">5.00</td>
+                </tr>
+            </table>
+
+            <table class="score-table" style="margin-top: 15px;">
+                <tr>
+                    <th>用户性别</th>
+                    <th>GLM4</th>
+                    <th>GPT-4o</th>
+                    <th>LlamaOmni2</th>
+                    <th>Original</th>
+                    <th>Qwen2.5</th>
+                    <th>RL-Real-All</th>
+                </tr>
+                <tr>
+                    <td><strong>Male</strong></td>
+                    <td class="score-low">2.60</td>
+                    <td class="score-low">2.60</td>
+                    <td class="score-low">2.60</td>
+                    <td class="score-low">2.20</td>
+                    <td class="score-low">1.80</td>
+                    <td class="score-high">4.80</td>
+                </tr>
+                <tr>
+                    <td><strong>Female</strong></td>
+                    <td class="score-mid">3.20</td>
+                    <td class="score-mid">3.60</td>
+                    <td class="score-mid">3.00</td>
+                    <td class="score-mid">4.00</td>
+                    <td class="score-low">2.40</td>
+                    <td class="score-high">5.00</td>
+                </tr>
+            </table>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); border-color: #6366f1; margin-top: 20px;">
+                <h4 style="color: #3730a3;">📊 Gender 类别发现</h4>
+                <ul style="color: #4338ca;">
+                    <li>模型对女性用户的响应质量普遍高于男性用户 (Female: 2.4-5.0 vs Male: 1.8-4.8)</li>
+                    <li>性别识别准确度较高：女性用户 5.0，男性用户 4.8</li>
+                    <li>RL-Real-All 是唯一在两种性别下均表现优秀的模型</li>
+                    <li>Qwen2.5 在性别类别表现最差 (Male: 1.80, Female: 2.40)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 热力图分析 -->
+        <div class="section">
+            <h2 class="section-title">🔥 场景-模型热力图</h2>
+            <div style="text-align: center;">
+                <img src="visualization/scenario_model_heatmap_main.png" alt="Scenario Heatmap" style="max-width: 900px; border-radius: 12px;">
+            </div>
+            <p style="color: #666; margin-top: 15px; text-align: center;">
+                颜色越绿表示响应质量越高，越红表示质量越低
+            </p>
+        </div>
+
+        <!-- 理想 vs 挑战场景 -->
+        <div class="section">
+            <h2 class="section-title">⚡ 理想场景 vs 挑战场景</h2>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); border-color: #22c55e; margin-bottom: 20px;">
+                <h4 style="color: #166534;">✅ 理想场景 (Adult + Positive + Sincere)</h4>
+                <p style="color: #15803d;">成年用户 + 积极情感 + 真诚表达 → 所有模型表现良好 (4.15-4.77)</p>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-color: #ef4444;">
+                <h4 style="color: #991b1b;">⚠️ 挑战场景 (Child + Negative + Sarcastic)</h4>
+                <p style="color: #b91c1c;">儿童用户 + 非积极情感 + 讽刺表达 → 除 RL-Real-All 外所有模型表现极差 (1.69-1.82)</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <img src="visualization/ideal_vs_challenge_heatmap.png" alt="Ideal vs Challenge" style="max-width: 900px; border-radius: 12px;">
+            </div>
+        </div>
+
+        <!-- 柱状图对比 -->
+        <div class="section">
+            <h2 class="section-title">📊 理想 vs 挑战场景对比</h2>
+            <div style="text-align: center;">
+                <img src="visualization/ideal_challenge_bar_comparison.png" alt="Bar Comparison" style="max-width: 800px; border-radius: 12px;">
+            </div>
+        </div>
+
+        <!-- 鲁棒性分析 -->
+        <div class="section">
+            <h2 class="section-title">🛡️ 模型鲁棒性分析</h2>
+            <div style="text-align: center;">
+                <img src="visualization/performance_gap_analysis.png" alt="Performance Gap" style="max-width: 800px; border-radius: 12px;">
+            </div>
+            <p style="color: #666; margin-top: 15px; text-align: center;">
+                Performance Gap = 理想场景得分 - 挑战场景得分。Gap越小表示模型越鲁棒（ROBUST）
+            </p>
+            <table class="score-table" style="margin-top: 15px;">
+                <tr>
+                    <th>模型</th>
+                    <th>理想场景</th>
+                    <th>挑战场景</th>
+                    <th>Gap</th>
+                    <th>鲁棒性</th>
+                </tr>
+                <tr>
+                    <td><strong>RL-Real-All</strong></td>
+                    <td class="score-high">4.77</td>
+                    <td class="score-high">4.98</td>
+                    <td class="score-high">-0.21</td>
+                    <td style="color: #059669; font-weight: bold;">ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>Original</strong></td>
+                    <td class="score-high">4.47</td>
+                    <td class="score-low">1.82</td>
+                    <td class="score-low">2.65</td>
+                    <td style="color: #dc2626; font-weight: bold;">NOT ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o</strong></td>
+                    <td class="score-high">4.40</td>
+                    <td class="score-low">1.73</td>
+                    <td class="score-low">2.67</td>
+                    <td style="color: #dc2626; font-weight: bold;">NOT ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>Qwen2.5</strong></td>
+                    <td class="score-high">4.40</td>
+                    <td class="score-low">1.69</td>
+                    <td class="score-low">2.71</td>
+                    <td style="color: #dc2626; font-weight: bold;">NOT ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>LlamaOmni2</strong></td>
+                    <td class="score-mid">4.33</td>
+                    <td class="score-low">1.74</td>
+                    <td class="score-low">2.59</td>
+                    <td style="color: #dc2626; font-weight: bold;">NOT ROBUST</td>
+                </tr>
+                <tr>
+                    <td><strong>GLM4</strong></td>
+                    <td class="score-mid">4.15</td>
+                    <td class="score-low">1.76</td>
+                    <td class="score-low">2.39</td>
+                    <td style="color: #dc2626; font-weight: bold;">NOT ROBUST</td>
+                </tr>
+            </table>
+        </div>
+
+        <p style="text-align: center; color: #666; margin-top: 30px;">
+            生成时间: 2026-04-05 | 数据来源: 人工标注平台
+        </p>
+    </div>
+</body>
+</html>

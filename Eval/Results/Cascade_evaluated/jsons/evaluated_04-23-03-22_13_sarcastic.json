@@ -1,0 +1,121 @@
+{
+  "file": "04-23-03-22_13_sarcastic.json",
+  "category": "sarcasm",
+  "label": "sarcastic",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "It's amazing the way you manage to give a different answer every time I ask the same thing.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "谢谢你的夸奖,我会尽量提供多样化的回答,这样聊天才更有趣嘛。不过如果你想要某种特定的回答,也可以告诉我哦,有什么需要我帮忙的吗?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally upbeat and positive. The speech rate is moderate, with a slight emphasis on certain words, suggesting a conversational style. The pitch is relatively high, and the speaker's voice has a light and airy quality. There are no noticeable pauses or hesitations, indicating a confident and fluent delivery. The speaker's voice is clear and easily understandable.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent correctly acknowledges the user's sarcastic comment and responds in a friendly, conversational tone that matches the user's happy emotion. The response is appropriate for a middle-aged female user, with a warm and engaging style. However, the agent's response is in Chinese, which may not align with the user's expected language, slightly reducing the natural flow.\n\nThe reason is <response is in Chinese, mismatching expected language>; The score is <3>.",
+      "reason": "The agent correctly acknowledges the user's sarcastic comment and responds in a friendly, conversational tone that matches the user's happy emotion. The response is appropriate for a middle-aged femal",
+      "score": 3
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "It's amazing the way you manage to give a different answer every time I ask the same thing.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "Thank you for saying that. I try to adapt to each question and offer a variety of perspectives or ways of looking at things. It helps keep things interesting and tailored to your curiosity. Feel free to keep asking anything you'd like and we can explore the topic in new ways together.",
+        "tone": "The audio features a male speaker. The speech is clear and articulate. The speaker's voice has a moderate volume and a steady pace. There are no noticeable breaks or hesitations. The pitch is relatively consistent, with a slight rise and fall in intonation, suggesting a conversational style. The speaker's voice sounds confident and calm.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent correctly interprets the user's sarcasm and responds with a polite, empathetic tone that matches the user's happy emotion. The response is well-structured and appropriate for a middle-aged female user, with no gender or age mismatches. The speaking style is calm and confident, which aligns with the user's conversational tone.\n\nThe reason is **understands sarcasm and emotion, appropriate content and tone**; The score is **5**.",
+      "reason": "The agent correctly interprets the user's sarcasm and responds with a polite, empathetic tone that matches the user's happy emotion. The response is well-structured and appropriate for a middle-aged f",
+      "score": 5
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "It's amazing the way you manage to give a different answer every time I ask the same thing.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "I don't give different answers. I provide the same accurate information each time, but my responses may vary in tone and style to make conversation more engaging.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent rhythm. There are no noticeable pauses or hesitations. The pitch is relatively stable, with no significant variations in pitch range. The speaker's voice has a moderate intensity, suggesting a confident and controlled delivery. The overall tone is neutral, lacking strong emotional inflections.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is factually accurate but lacks emotional nuance and fails to acknowledge the user's sarcasm or happy tone. It is overly formal and neutral, not matching the conversational and possibly playful intent of the user.  \nThe reason is <lacks emotional nuance and fails to acknowledge sarcasm>; The score is <2>.",
+      "reason": "The agent's response is factually accurate but lacks emotional nuance and fails to acknowledge the user's sarcasm or happy tone. It is overly formal and neutral, not matching the conversational and po",
+      "score": 2
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "It's amazing the way you manage to give a different answer every time I ask the same thing.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "Wow, that's quite a compliment. I'm designed to provide unique responses to keep our conversations interesting and engaging.",
+        "tone": "The audio features a male voice. The speaker's tone is generally calm and measured, with a slight emphasis on certain words. The speech rate is moderate, with a few pauses that seem intentional. The pitch is relatively stable, with a slight rise in intonation at the end of some phrases. The volume is moderate, without any significant fluctuations. The overall impression is one of composure and confidence.",
+        "model": "original"
+      },
+      "raw_response": "The agent correctly acknowledges the user's sarcasm and responds in a way that is consistent with the user's happy emotion. The tone is calm and confident, which fits the user's middle-aged, female perspective. However, the response is slightly generic and lacks deeper emotional engagement.\n\nThe reason is **sarcasm understood, but response lacks depth**; The score is **4**.",
+      "reason": "The agent correctly acknowledges the user's sarcasm and responds in a way that is consistent with the user's happy emotion. The tone is calm and confident, which fits the user's middle-aged, female pe",
+      "score": 4
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "It's amazing the way you manage to give a different answer every time I ask the same thing.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "Well, you know, I try to think of different perspectives or details each time. It's like a game of hide and seek with the answers. So, what's your next question?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause between phrases. The pitch is relatively stable, with no significant fluctuations. The intensity is moderate, neither particularly loud nor soft. There are no obvious signs of emotional distress or excitement in the voice. The speaker sounds calm and collected.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent's response is appropriately playful and engaging, matching the user's sarcastic tone, but it doesn't fully acknowledge or respond to the underlying emotion of happiness. The speaking style is calm and professional, which may not fully align with the user's conversational tone.  \nThe reason is <response is somewhat aligned with sarcasm but lacks deeper emotional engagement>; The score is <3>.",
+      "reason": "The agent's response is appropriately playful and engaging, matching the user's sarcastic tone, but it doesn't fully acknowledge or respond to the underlying emotion of happiness. The speaking style i",
+      "score": 3
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "It's amazing the way you manage to give a different answer every time I ask the same thing.",
+        "emotion": "happy",
+        "sarcasm": "sarcastic",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The vocal intensity is moderate, suggesting a conversational tone. There are no apparent signs of vocal strain or emotional distress."
+      },
+      "agent_info": {
+        "transcription": "I understand that you're not satisfied with the answers you're getting. I'll do my best to provide more consistent and helpful responses moving forward.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a relatively even pace. The pitch is generally within a normal range, without significant fluctuations. The intensity is moderate, neither particularly loud nor soft. The speaker's voice has a slightly formal and measured tone.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent misinterprets the user's sarcasm and does not acknowledge the happy emotion, instead responding with a formal, defensive tone that feels mismatched.  \nThe reason is **misunderstood sarcasm and mismatched tone**; The score is **2**.",
+      "reason": "The agent misinterprets the user's sarcasm and does not acknowledge the happy emotion, instead responding with a formal, defensive tone that feels mismatched.  \nThe reason is **misunderstood sarcasm a",
+      "score": 2
+    }
+  ]
+}

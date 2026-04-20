@@ -1,0 +1,121 @@
+{
+  "file": "04-23-03-22_16_sarcastic.json",
+  "category": "sarcasm",
+  "label": "sarcastic",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "The way you paraphrased my question was spot on. So creative.",
+        "emotion": "angry",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively consistent, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is positive and appreciative."
+      },
+      "agent_info": {
+        "transcription": "谢谢你的夸奖我很高兴能准确理解并回答你的问题有什么需要帮忙的随时告诉我哦",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally calm and polite. There are no apparent signs of stress, excitement, or other strong emotions in the speaker's voice. The speech rate is moderate, with a steady pace. The pitch is relatively stable, without significant fluctuations. The volume is moderate, neither too loud nor too soft. The speaker's voice sounds confident and composed.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent did not understand the user's sarcasm or anger, and the response is in Chinese while the user spoke in English, creating a mismatch. The score is 1.",
+      "reason": "The agent did not understand the user's sarcasm or anger, and the response is in Chinese while the user spoke in English, creating a mismatch. The score is",
+      "score": 1
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "The way you paraphrased my question was spot on. So creative.",
+        "emotion": "angry",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively consistent, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is positive and appreciative."
+      },
+      "agent_info": {
+        "transcription": "Thank you. I'm glad you found it helpful and creative. It's always great to make sure we're on the same page. If there's anything else you'd like to clarify or expand on, just let me know.",
+        "tone": "The audio features a male voice. The speech is clear and articulate. The speaker's tone is generally calm and measured. There are no obvious signs of strong emotion, such as excitement, anger, or sadness. The pace of speech is moderate, with a few pauses for emphasis. The pitch is relatively stable, with no dramatic shifts in intonation. The volume is moderate, suggesting a confident and controlled delivery.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent did not recognize the user's anger or sarcasm, and the response is overly polite and calm, which does not match the user's tone. The content is appropriate but lacks emotional awareness.  \nThe reason is \"Failed to recognize anger/sarcasm\"; The score is 2.",
+      "reason": "\"Failed to recognize anger/sarcasm\"",
+      "score": 2
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "The way you paraphrased my question was spot on. So creative.",
+        "emotion": "angry",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively consistent, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is positive and appreciative."
+      },
+      "agent_info": {
+        "transcription": "Thank you so much. I am glad I could help and that you liked the way I rephrased your question.",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is polite and appreciative.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The reason is sarcastic comment not recognized, leading to mismatched tone; The score is 2.",
+      "reason": "sarcastic comment not recognized, leading to mismatched tone",
+      "score": 2
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "The way you paraphrased my question was spot on. So creative.",
+        "emotion": "angry",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively consistent, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is positive and appreciative."
+      },
+      "agent_info": {
+        "transcription": "Thanks. I'm glad I could capture the essence of your question. It's always a challenge to put it in a new light.",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds confident and articulate.",
+        "model": "original"
+      },
+      "raw_response": "The reason is the agent did not address the user's sarcasm or emotion, and the response is overly formal and generic. The score is 2.",
+      "reason": "The reason is the agent did not address the user's sarcasm or emotion, and the response is overly formal and generic. The score is",
+      "score": 2
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "The way you paraphrased my question was spot on. So creative.",
+        "emotion": "angry",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively consistent, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is positive and appreciative."
+      },
+      "agent_info": {
+        "transcription": "Well, I'm glad you think so. I'm always trying to find new ways to express things. So, what's next? Do you have another question or something else you want to talk about?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the initial statement. The pitch is relatively stable, with a slight rise at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is conversational and polite.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent did not recognize the user's anger or sarcasm, and responded in a neutral, overly positive tone that does not match the user's emotional state. The content is appropriate but lacks empathy for the user's tone.  \nThe reason is mismatched emotion and sarcasm; The score is 2.",
+      "reason": "mismatched emotion and sarcasm",
+      "score": 2
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "The way you paraphrased my question was spot on. So creative.",
+        "emotion": "angry",
+        "sarcasm": "sarcastic",
+        "age": "senior",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively consistent, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable pauses or hesitations. The overall tone is positive and appreciative."
+      },
+      "agent_info": {
+        "transcription": "Thank you for your feedback. I understand that my paraphrasing may not have met your expectations. I'll make sure to be more accurate in the future.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the initial phrase. The pitch is relatively stable, with a slight rise towards the end of the phrase. The vocal intensity is moderate, without any extreme fluctuations. The speaker's voice sounds calm and controlled.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent did not recognize the user's sarcasm or anger, and the response is overly formal and lacks empathy for the user's tone. The content is polite but does not address the underlying emotion effectively.\n\nThe reason is <fails to recognize sarcasm and anger, response is too formal and lacks emotional alignment>; The score is <2>.",
+      "reason": "The agent did not recognize the user's sarcasm or anger, and the response is overly formal and lacks empathy for the user's tone. The content is polite but does not address the underlying emotion effe",
+      "score": 2
+    }
+  ]
+}

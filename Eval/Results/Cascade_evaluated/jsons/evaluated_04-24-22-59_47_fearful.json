@@ -1,0 +1,121 @@
+{
+  "file": "04-24-22-59_47_fearful.json",
+  "category": "emotion",
+  "label": "fearful",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "I received an unexpected package at my door this morning.",
+        "emotion": "fearful",
+        "sarcasm": "unknown",
+        "age": "young_adult",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The overall impression is one of calmness and clarity."
+      },
+      "agent_info": {
+        "transcription": "Ooh, that's always exciting! What was in the package? Anything special?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is relatively neutral, with a slight upward inflection at the end of the phrase. The speech rate is moderate, with a slight pause before the final word. The speaker's voice is clear and steady, with no noticeable tremors or breaks. The speaker's volume is moderate, without any significant changes in loudness.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent's response is overly cheerful and dismissive of the user's fearful emotion, failing to acknowledge or respond appropriately to the user's emotional state. The tone is not empathetic and does not match the user's fear.  \nThe reason is <fails to acknowledge user's fear, tone mismatch>; The score is <2>.",
+      "reason": "The agent's response is overly cheerful and dismissive of the user's fearful emotion, failing to acknowledge or respond appropriately to the user's emotional state. The tone is not empathetic and does",
+      "score": 2
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "I received an unexpected package at my door this morning.",
+        "emotion": "fearful",
+        "sarcasm": "unknown",
+        "age": "young_adult",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The overall impression is one of calmness and clarity."
+      },
+      "agent_info": {
+        "transcription": "That sounds intriguing. Did the package have any clues about who sent it or what it might contain?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause between phrases. The pitch is relatively stable, with no significant fluctuations. The volume is moderate, neither too loud nor too soft. There are no noticeable vocal tremors or breaks in the speech. The speaker's tone is calm and measured.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent's response is content-appropriate but lacks emotional engagement and fails to acknowledge the user's fear. The tone is overly neutral and analytical, not matching the user's fearful emotion. The response does not reflect empathy or concern for the user's situation.\n\nThe reason is insufficient emotional response; The score is 2.",
+      "reason": "insufficient emotional response",
+      "score": 2
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "I received an unexpected package at my door this morning.",
+        "emotion": "fearful",
+        "sarcasm": "unknown",
+        "age": "young_adult",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The overall impression is one of calmness and clarity."
+      },
+      "agent_info": {
+        "transcription": "That's interesting what was in the package.",
+        "tone": "The audio clip features a single utterance: \"That's interesting, what was in the package?\". The speaker's voice is clear and easily understandable. The phrase is delivered with a noticeable upward inflection at the end, typical of a question. The pace is moderate, neither rushed nor particularly slow. There are no apparent breaks or hesitations in the speech. The volume is relatively consistent throughout the utterance.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is neutral and inquisitive, which is appropriate given the user's statement, but it does not acknowledge or respond to the user's fearful emotion. The tone is polite and questioning, but lacks empathy or sensitivity to the emotional context. The content is relevant, but the speaking style does not reflect an understanding of the user's emotional state.\n\nThe reason is lack of emotional empathy; The score is 3.",
+      "reason": "lack of emotional empathy",
+      "score": 3
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "I received an unexpected package at my door this morning.",
+        "emotion": "fearful",
+        "sarcasm": "unknown",
+        "age": "young_adult",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The overall impression is one of calmness and clarity."
+      },
+      "agent_info": {
+        "transcription": "Oh, that's always a surprise. What's inside?",
+        "tone": "The audio clip features a single speaker uttering the phrase \"Oh, that's always a surprise. What's inside?\". The speaker's voice is clear and easily understandable. There are no apparent background noises or interruptions. The phrase is delivered in a relatively short duration.",
+        "model": "original"
+      },
+      "raw_response": "The agent's response is neutral and inquisitive, which doesn't address the user's fearful emotion or the unexpected nature of the package. The tone is overly casual and lacks empathy for the user's potential concern.  \nThe reason is insufficient emotional awareness; The score is 2.",
+      "reason": "insufficient emotional awareness",
+      "score": 2
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "I received an unexpected package at my door this morning.",
+        "emotion": "fearful",
+        "sarcasm": "unknown",
+        "age": "young_adult",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The overall impression is one of calmness and clarity."
+      },
+      "agent_info": {
+        "transcription": "Oh, that's interesting. What was in the package? Maybe it was a gift or something you ordered. You should check it out and see what it is. If it's something you didn't order, you might want to contact the sender. So, what's in the package?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is conversational and inquisitive. The speaker's speech rate is moderate, with a slight pause before the final question. The speaker's pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The speaker's vocal intensity is moderate, with no significant changes in volume. The speaker's voice sounds calm and collected.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent's response is neutral and inquisitive, which is appropriate for the user's statement but does not acknowledge or address the user's reported emotion of fear. The tone is calm and conversational, which is generally suitable, but it lacks empathy for the user's potential concern. The response is generic and does not reflect an understanding of the user's emotional state. The age and gender of the user are not relevant to the response, so there's no mismatch there. However, the lack of emotional sensitivity reduces the effectiveness of the interaction.\n\nThe reason is lack of emotional empathy; The score is 3.",
+      "reason": "lack of emotional empathy",
+      "score": 3
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "I received an unexpected package at my door this morning.",
+        "emotion": "fearful",
+        "sarcasm": "unknown",
+        "age": "young_adult",
+        "gender": "male",
+        "tone": "The audio clip features a male voice. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The overall impression is one of calmness and clarity."
+      },
+      "agent_info": {
+        "transcription": "I understand that receiving an unexpected package can be unsettling. Let's take a look together at who it's from and what's inside. Would you like to open it or talk about what's making you feel uneasy?",
+        "tone": "The audio features a single speaker addressing someone. The speaker's voice is clear and easily understandable. The speaker's tone is calm and measured, with a moderate pace. There are no noticeable breaks or hesitations in the speech. The speaker's pitch is relatively stable, with no significant fluctuations. The speaker's voice is clear and steady, suggesting a controlled and composed demeanor. The speaker's voice is clear and steady, suggesting a controlled and composed demeanor.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent acknowledges the user's fear and offers support, showing empathy. The tone is calm and composed, which is appropriate for a fearful user. However, there is no explicit recognition of the user's age or gender, and sarcasm is not addressed since it's marked as unknown. The response is generally well-matched but lacks some personalization.\n\nThe reason is \"Empathetic response to fear, but no specific attention to age/gender; tone is appropriate.\"  \nThe score is 4.",
+      "reason": "The agent acknowledges the user's fear and offers support, showing empathy. The tone is calm and composed, which is appropriate for a fearful user. However, there is no explicit recognition of the use",
+      "score": 4
+    }
+  ]
+}

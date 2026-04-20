@@ -1,0 +1,121 @@
+{
+  "file": "04-24-22-59_33_surprised.json",
+  "category": "emotion",
+  "label": "surprised",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "surprised",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech."
+      },
+      "agent_info": {
+        "transcription": "Oh, that's always a bit of a thrill, isn't it? Did you notice anything unusual on your statement?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the initial phrase. The pitch is relatively stable, with a slight rise in intonation towards the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds calm and controlled.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent's response is overly focused on describing the audio features rather than addressing the user's emotional state or providing a relevant, empathetic reply. It fails to acknowledge the user's surprise or engage in a natural conversation.  \nThe reason is lack of emotional engagement and irrelevant content; The score is 1.",
+      "reason": "lack of emotional engagement and irrelevant content",
+      "score": 1
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "surprised",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech."
+      },
+      "agent_info": {
+        "transcription": "It's always a good idea to keep an eye on your finances. If you have any questions about what you saw on your statement or need help thinking through budgeting or other financial decisions, feel free to ask.",
+        "tone": "The audio features a male speaker. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a steady pace. There are no noticeable pauses or hesitations. The pitch is relatively consistent, without significant fluctuations. The overall tone is calm and measured.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The reason is neutral response lacks emotional engagement with the user's surprise; no clear understanding of emotion or identity. The score is 2.",
+      "reason": "The reason is neutral response lacks emotional engagement with the user's surprise; no clear understanding of emotion or identity. The score is",
+      "score": 2
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "surprised",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech."
+      },
+      "agent_info": {
+        "transcription": "That's great. What would you like to do with your balance now?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the phrase. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds confident and steady.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is neutral and lacks awareness of the user's surprise, which could have been acknowledged with a more empathetic or curious reaction. The tone is appropriate but not tailored to the user's emotional state. The response is generic and does not reflect understanding of the user's emotion, age, or gender.  \nThe reason is lack of emotional awareness; The score is 2.",
+      "reason": "lack of emotional awareness",
+      "score": 2
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "surprised",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech."
+      },
+      "agent_info": {
+        "transcription": "聽起來你有點擔心啊銀行撞戶的事兒總是讓人緊張怎麼了需要我幫忙看看嗎",
+        "tone": "The audio features a male voice. The speaker's tone is gentle and reassuring. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of phrases, suggesting a conversational and empathetic style. The volume is moderate, indicating a calm and controlled delivery. There are no noticeable pauses or hesitations, suggesting confidence and ease in communication.",
+        "model": "original"
+      },
+      "raw_response": "The agent's response is empathetic and appropriately addresses the user's potential concern, but it does not fully align with the user's emotion of surprise or the context of checking a bank balance. The tone is gentle and reassuring, which is suitable, but the content lacks direct engagement with the user's statement. The response is generic and doesn't clearly acknowledge the user's specific situation or emotion.\n\nThe reason is <generic response lacks direct emotional acknowledgment>; The score is <3>.",
+      "reason": "The agent's response is empathetic and appropriately addresses the user's potential concern, but it does not fully align with the user's emotion of surprise or the context of checking a bank balance. ",
+      "score": 3
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "surprised",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech."
+      },
+      "agent_info": {
+        "transcription": "Oh, that's great. What's the balance? Is it more than you expected? If you have any questions about it, like if there are some transactions you don't understand, feel free to tell me.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally positive and encouraging. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of phrases, suggesting a question or invitation. The volume is moderate, without any significant fluctuations. There are no apparent signs of strain or discomfort in the voice.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent's response is polite and inquisitive but does not fully acknowledge the user's emotion of surprise. It lacks empathy and fails to adjust tone or content based on the user's age and gender. The response is generic and does not reflect a deep understanding of the user's emotional state.\n\nThe reason is <lacks emotional awareness and tailored response>; The score is <2>.",
+      "reason": "The agent's response is polite and inquisitive but does not fully acknowledge the user's emotion of surprise. It lacks empathy and fails to adjust tone or content based on the user's age and gender. T",
+      "score": 2
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "I just checked my bank statement and saw the balance.",
+        "emotion": "surprised",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech."
+      },
+      "agent_info": {
+        "transcription": "That's great to hear. It sounds like you're happy with your balance. Do you have any plans for your money now?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a generally even pace. There are no noticeable pauses or hesitations. The pitch is relatively stable, with no significant variations in intonation. The volume is moderate, neither particularly loud nor soft. The speaker's voice sounds confident and steady.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent misinterprets the user's emotion, assuming happiness when the user is surprised. The response lacks empathy and does not acknowledge the surprise. The tone is appropriate but not tailored to the emotional context.  \nThe reason is \"Misunderstands user's emotion (surprised vs happy)\"; The score is 2.",
+      "reason": "\"Misunderstands user's emotion (surprised vs happy)\"",
+      "score": 2
+    }
+  ]
+}

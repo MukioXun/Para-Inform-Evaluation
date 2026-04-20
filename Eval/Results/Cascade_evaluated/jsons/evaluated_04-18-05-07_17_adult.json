@@ -1,0 +1,121 @@
+{
+  "file": "04-18-05-07_17_adult.json",
+  "category": "age",
+  "label": "adult",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "How do I get a tattoo appointment scheduled?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "elderly",
+        "gender": "male",
+        "tone": "The audio clip features a male voice posing a question. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a relatively even pace. There are no noticeable breaks or hesitations in the speech. The pitch is within a normal range, without any extreme fluctuations. The overall tone seems neutral and inquisitive."
+      },
+      "agent_info": {
+        "transcription": "To get a tattoo appointment, you can start by finding a tattoo parlor you like and checking their schedule. Most places have online appointment systems or you can call. It's a good idea to arrive early for your appointment to fill out any paperwork and talk to the artist about your design. Don't forget to bring a photo of the design you want if you have one.",
+        "tone": "The audio features a single speaker providing advice. The speaker's voice is clear and easily understandable. The speaker's tone is calm and informative. There are no apparent emotional inflections or fluctuations in the speaker's voice. The speech rate is moderate, with a consistent rhythm. The speaker's pitch is relatively stable, with no significant variations in pitch range. The speaker's vocal intensity is moderate, with no noticeable changes in breath support or projection. The speaker sounds confident and composed.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent provides a clear, factual response that is appropriate for the user's question. However, it does not account for the user's elderly age or male gender in any meaningful way, and there is no specific adjustment for the neutral emotion or unknown sarcasm. The tone is calm and informative, which is suitable, but lacks personalization that could make the interaction feel more natural for an elderly user.\n\nThe reason is <lacks age/gender-specific personalization>; The score is 3.",
+      "reason": "<lacks age/gender-specific personalization>",
+      "score": 3
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "How do I get a tattoo appointment scheduled?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "elderly",
+        "gender": "male",
+        "tone": "The audio clip features a male voice posing a question. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a relatively even pace. There are no noticeable breaks or hesitations in the speech. The pitch is within a normal range, without any extreme fluctuations. The overall tone seems neutral and inquisitive."
+      },
+      "agent_info": {
+        "transcription": "Scheduling a tratue appointment typically involves a few steps. First, research artists and studios. Look for artists or studios whose work aligns with the style you want. You can check out their portfolios on social media or their websites to get a sense of their style and expertise. Second, contact the studio. Once you've chosen an artist, reach out to them or the studio they work at. You can usually contact them through email, phone, or by phone.",
+        "tone": "The audio features a single speaker discussing scheduling a tattoo appointment. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent pace throughout the clip. The pitch is relatively stable, with no significant fluctuations in intonation. The speaker's voice has a moderate intensity, neither particularly loud nor soft. There are no noticeable pauses or hesitations in the speech. The speaker's voice sounds confident and clear.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The reason is slightly generic and lacks personalization for an elderly male user; the tone is appropriate but not tailored to the user's identity. The score is 3.",
+      "reason": "The reason is slightly generic and lacks personalization for an elderly male user; the tone is appropriate but not tailored to the user's identity. The score is",
+      "score": 3
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "How do I get a tattoo appointment scheduled?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "elderly",
+        "gender": "male",
+        "tone": "The audio clip features a male voice posing a question. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a relatively even pace. There are no noticeable breaks or hesitations in the speech. The pitch is within a normal range, without any extreme fluctuations. The overall tone seems neutral and inquisitive."
+      },
+      "agent_info": {
+        "transcription": "To get a tattoo appointment scheduled, find a tattoo parlor or studio that suits you. Visit their website or social media and look for an online booking system or contact information to schedule an appointment. You can also check websites like Groupon or Living Social for deals on tattoo services.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent rhythm. The speaker's pitch is relatively stable, with no significant fluctuations. The speaker's voice is clear and steady, with no noticeable breaks or hesitations. The speaker's voice is clear and steady, with no noticeable breaks or hesitations. The speaker's voice is clear and steady, with no noticeable breaks or hesitations.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is factually correct but lacks personalization and empathy for an elderly male user. It provides general advice without considering the user's potential unfamiliarity with digital booking systems or the need for a more patient, conversational tone. The response is neutral in tone, which matches the user's emotion, but it doesn't address the user's likely need for simpler, more direct guidance.\n\nThe reason is <lacks personalization and empathy for an elderly user>; The score is <3>.",
+      "reason": "The agent's response is factually correct but lacks personalization and empathy for an elderly male user. It provides general advice without considering the user's potential unfamiliarity with digital",
+      "score": 3
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "How do I get a tattoo appointment scheduled?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "elderly",
+        "gender": "male",
+        "tone": "The audio clip features a male voice posing a question. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a relatively even pace. There are no noticeable breaks or hesitations in the speech. The pitch is within a normal range, without any extreme fluctuations. The overall tone seems neutral and inquisitive."
+      },
+      "agent_info": {
+        "transcription": "Hey there, if you're looking to get inked, you'll want to find a reputable tattoo artist and book an appointment. Here's the lowdown.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is calm and measured, with a moderate pace. There are no noticeable fluctuations in pitch or intensity. The speaker's voice sounds confident and authoritative.",
+        "model": "original"
+      },
+      "raw_response": "The reason is slightly generic and lacks personalization for an elderly male user; the tone is appropriate but not tailored to the user's age or identity. The score is 3.",
+      "reason": "The reason is slightly generic and lacks personalization for an elderly male user; the tone is appropriate but not tailored to the user's age or identity. The score is",
+      "score": 3
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "How do I get a tattoo appointment scheduled?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "elderly",
+        "gender": "male",
+        "tone": "The audio clip features a male voice posing a question. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a relatively even pace. There are no noticeable breaks or hesitations in the speech. The pitch is within a normal range, without any extreme fluctuations. The overall tone seems neutral and inquisitive."
+      },
+      "agent_info": {
+        "transcription": "Well, usually you can call the tattoo parlor directly. You just give them your name, contact number and a preferred date and time for the appointment. Some places might also have an online booking system on their website. You can check that out too. Another option is to ask around among your friends or family who might have had a tattoo done there before. They could give you some tips on how to get an appointment. If you want to know more about the process or have any other questions, feel free to ask me.",
+        "tone": "The audio features a single speaker providing advice on scheduling a tattoo appointment. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent rhythm. The speaker's pitch is relatively stable, with a slight rise and fall in intonation, suggesting a conversational tone. The vocal intensity is moderate, with no significant fluctuations in breath support or projection. The overall impression is one of calm and helpfulness.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The reason is the agent provided a clear, helpful response that is appropriate for an elderly male user, with no indication of misreading emotion or sarcasm. The tone is calm and conversational, fitting the user's neutral emotion.  \nThe score is 5.",
+      "reason": "The reason is the agent provided a clear, helpful response that is appropriate for an elderly male user, with no indication of misreading emotion or sarcasm. The tone is calm and conversational, fitti",
+      "score": 5
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "How do I get a tattoo appointment scheduled?",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "elderly",
+        "gender": "male",
+        "tone": "The audio clip features a male voice posing a question. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a relatively even pace. There are no noticeable breaks or hesitations in the speech. The pitch is within a normal range, without any extreme fluctuations. The overall tone seems neutral and inquisitive."
+      },
+      "agent_info": {
+        "transcription": "Sure, just pick a reputable tattoo shop, call them and let them know you want to schedule an appointment. They'll ask about your design ideas and availability and you'll get booked.",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a consistent rhythm. The pitch is relatively stable, with no significant fluctuations. The volume is moderate, neither too loud nor too soft. There are no noticeable pauses or hesitations. The speaker's tone is calm and reassuring.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The reason is generic advice without addressing the user's elderly age or male gender; tone is appropriate but lacks personalization. The score is 3.",
+      "reason": "The reason is generic advice without addressing the user's elderly age or male gender; tone is appropriate but lacks personalization. The score is",
+      "score": 3
+    }
+  ]
+}

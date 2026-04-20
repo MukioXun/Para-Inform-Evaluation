@@ -1,0 +1,2719 @@
+{
+  "age": {
+    "total": 60,
+    "correct": 30,
+    "details": [
+      {
+        "file": "04-18-05-07_16_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_16_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_16_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_16_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_16_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_16_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_10_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_84_adult.json",
+        "ground_truth": "adult",
+        "predicted": "senior",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_84_adult.json",
+        "ground_truth": "adult",
+        "predicted": "senior",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_84_adult.json",
+        "ground_truth": "adult",
+        "predicted": "senior",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_84_adult.json",
+        "ground_truth": "adult",
+        "predicted": "senior",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_84_adult.json",
+        "ground_truth": "adult",
+        "predicted": "senior",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_84_adult.json",
+        "ground_truth": "adult",
+        "predicted": "senior",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_84_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_84_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_84_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_84_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_84_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_84_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_17_adult.json",
+        "ground_truth": "adult",
+        "predicted": "elderly",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_adult.json",
+        "ground_truth": "adult",
+        "predicted": "elderly",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_adult.json",
+        "ground_truth": "adult",
+        "predicted": "elderly",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_adult.json",
+        "ground_truth": "adult",
+        "predicted": "elderly",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_adult.json",
+        "ground_truth": "adult",
+        "predicted": "elderly",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_17_adult.json",
+        "ground_truth": "adult",
+        "predicted": "elderly",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_10_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_10_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "child",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_16_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_16_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_16_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_16_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_16_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_16_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_0_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_0_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_0_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_0_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_0_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_0_littlekid.json",
+        "ground_truth": "littlekid",
+        "predicted": "young_adult",
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "file": "04-18-05-07_0_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_0_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_0_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_0_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_0_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "file": "04-18-05-07_0_adult.json",
+        "ground_truth": "adult",
+        "predicted": "middle_aged",
+        "confidence": 0.8,
+        "match": true
+      }
+    ],
+    "by_label": {
+      "littlekid": {
+        "total": 30,
+        "correct": 12
+      },
+      "adult": {
+        "total": 30,
+        "correct": 18
+      }
+    },
+    "confidence_stats": [
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": false
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      },
+      {
+        "confidence": 0.8,
+        "match": true
+      }
+    ]
+  },
+  "emotion": {
+    "total": 120,
+    "correct": 24,
+    "details": [
+      {
+        "file": "04-24-22-59_49_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_2_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "fearful",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_2_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "fearful",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_2_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "fearful",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_2_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "fearful",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_2_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "fearful",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_2_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "fearful",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_15_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_18_sad.json",
+        "ground_truth": "sad",
+        "predicted": "sad",
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_18_sad.json",
+        "ground_truth": "sad",
+        "predicted": "sad",
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_18_sad.json",
+        "ground_truth": "sad",
+        "predicted": "sad",
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_18_sad.json",
+        "ground_truth": "sad",
+        "predicted": "sad",
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_18_sad.json",
+        "ground_truth": "sad",
+        "predicted": "sad",
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_18_sad.json",
+        "ground_truth": "sad",
+        "predicted": "sad",
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_33_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_33_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_33_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_33_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_33_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_33_sad.json",
+        "ground_truth": "sad",
+        "predicted": "neutral",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_24_happy.json",
+        "ground_truth": "happy",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_24_happy.json",
+        "ground_truth": "happy",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_24_happy.json",
+        "ground_truth": "happy",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_24_happy.json",
+        "ground_truth": "happy",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_24_happy.json",
+        "ground_truth": "happy",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_24_happy.json",
+        "ground_truth": "happy",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_15_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_15_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_33_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "surprised",
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_33_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "surprised",
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_33_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "surprised",
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_33_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "surprised",
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_33_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "surprised",
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_33_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "surprised",
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "file": "04-24-22-59_62_happy.json",
+        "ground_truth": "happy",
+        "predicted": "surprised",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_happy.json",
+        "ground_truth": "happy",
+        "predicted": "surprised",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_happy.json",
+        "ground_truth": "happy",
+        "predicted": "surprised",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_happy.json",
+        "ground_truth": "happy",
+        "predicted": "surprised",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_happy.json",
+        "ground_truth": "happy",
+        "predicted": "surprised",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_62_happy.json",
+        "ground_truth": "happy",
+        "predicted": "surprised",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "happy",
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "happy",
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "happy",
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "happy",
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "happy",
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_49_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "happy",
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_happy.json",
+        "ground_truth": "happy",
+        "predicted": "unknown",
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "happy",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_24_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "unknown",
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_24_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "unknown",
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_24_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "unknown",
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_24_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "unknown",
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_24_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "unknown",
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_24_disgust.json",
+        "ground_truth": "disgust",
+        "predicted": "unknown",
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "unknown",
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "unknown",
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "unknown",
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "unknown",
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "unknown",
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "unknown",
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_52_angry.json",
+        "ground_truth": "angry",
+        "predicted": "unknown",
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "unknown",
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "unknown",
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "unknown",
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "unknown",
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "unknown",
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_47_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "unknown",
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "angry",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "angry",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "angry",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "angry",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "angry",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_16_fearful.json",
+        "ground_truth": "fearful",
+        "predicted": "angry",
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_2_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "neutral",
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_2_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "neutral",
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_2_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "neutral",
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_2_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "neutral",
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_2_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "neutral",
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_2_surprised.json",
+        "ground_truth": "surprised",
+        "predicted": "neutral",
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_18_happy.json",
+        "ground_truth": "happy",
+        "predicted": "neutral",
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_18_happy.json",
+        "ground_truth": "happy",
+        "predicted": "neutral",
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_18_happy.json",
+        "ground_truth": "happy",
+        "predicted": "neutral",
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_18_happy.json",
+        "ground_truth": "happy",
+        "predicted": "neutral",
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_18_happy.json",
+        "ground_truth": "happy",
+        "predicted": "neutral",
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "file": "04-24-22-59_18_happy.json",
+        "ground_truth": "happy",
+        "predicted": "neutral",
+        "confidence": 0.673,
+        "match": false
+      }
+    ],
+    "by_label": {
+      "surprised": {
+        "total": 30,
+        "correct": 6
+      },
+      "fearful": {
+        "total": 18,
+        "correct": 6
+      },
+      "sad": {
+        "total": 18,
+        "correct": 6
+      },
+      "angry": {
+        "total": 12,
+        "correct": 0
+      },
+      "happy": {
+        "total": 30,
+        "correct": 6
+      },
+      "disgust": {
+        "total": 12,
+        "correct": 0
+      }
+    },
+    "confidence_stats": [
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "confidence": 0.993,
+        "match": false
+      },
+      {
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "confidence": 0.813,
+        "match": false
+      },
+      {
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "confidence": 0.966,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "confidence": 0.972,
+        "match": false
+      },
+      {
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "confidence": 0.821,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "confidence": 0.978,
+        "match": false
+      },
+      {
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "confidence": 0.523,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "confidence": 0.589,
+        "match": false
+      },
+      {
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "confidence": 0.961,
+        "match": false
+      },
+      {
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "confidence": 0.755,
+        "match": false
+      },
+      {
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "confidence": 0.99,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 1.0,
+        "match": false
+      },
+      {
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "confidence": 0.945,
+        "match": false
+      },
+      {
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "confidence": 0.673,
+        "match": false
+      },
+      {
+        "confidence": 0.673,
+        "match": false
+      }
+    ]
+  },
+  "gender": {
+    "total": 60,
+    "correct": 60,
+    "details": [
+      {
+        "file": "04-19-04-42_31_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_31_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_14_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_11_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_female.json",
+        "ground_truth": "female",
+        "predicted": "female",
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_16_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "file": "04-19-04-42_10_male.json",
+        "ground_truth": "male",
+        "predicted": "male",
+        "confidence": 0.971,
+        "match": true
+      }
+    ],
+    "by_label": {
+      "female": {
+        "total": 30,
+        "correct": 30
+      },
+      "male": {
+        "total": 30,
+        "correct": 30
+      }
+    },
+    "confidence_stats": [
+      {
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "confidence": 0.976,
+        "match": true
+      },
+      {
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "confidence": 0.994,
+        "match": true
+      },
+      {
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "confidence": 0.989,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 1.0,
+        "match": true
+      },
+      {
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "confidence": 0.991,
+        "match": true
+      },
+      {
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "confidence": 0.951,
+        "match": true
+      },
+      {
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "confidence": 0.998,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.995,
+        "match": true
+      },
+      {
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "confidence": 0.971,
+        "match": true
+      },
+      {
+        "confidence": 0.971,
+        "match": true
+      }
+    ]
+  },
+  "sarcasm": {
+    "total": 0,
+    "correct": 0,
+    "details": [],
+    "by_label": {},
+    "confidence_stats": []
+  }
+}

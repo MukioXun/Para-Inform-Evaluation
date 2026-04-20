@@ -1,0 +1,19 @@
+{
+  "category": "emotion",
+  "dir_name": "04-24-22-59_15_happy",
+  "ground_truth": "happy",
+  "annotations": {
+    "user_emotion_score": 1,
+    "user_age_score": 4,
+    "user_gender_score": 5,
+    "model_glm4_score": 5,
+    "model_gpt-4o-voice-mode_score": 5,
+    "model_llamaomni2_score": 3,
+    "model_original_score": 5,
+    "model_qwen2_5_score": 2,
+    "model_rl_real_all_score": 5,
+    "best_model": "",
+    "notes": ""
+  },
+  "timestamp": "2026-04-05T09:11:46.594Z"
+}

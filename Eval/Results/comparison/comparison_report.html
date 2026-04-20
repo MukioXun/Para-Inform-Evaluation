@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cascade vs Omni Evaluation Comparison</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        h1 { color: #333; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 30px; }
+        .meta { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-card { background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .stat-value { font-size: 28px; font-weight: bold; color: #3498db; }
+        .stat-label { font-size: 14px; color: #666; margin-top: 5px; }
+        .chart { text-align: center; margin: 20px 0; background: #fff; padding: 20px; border-radius: 8px; }
+        .chart img { max-width: 100%; border-radius: 8px; }
+        .highlight { color: #e74c3c; font-weight: bold; }
+        .positive { color: #27ae60; }
+        .negative { color: #e74c3c; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #3498db; color: white; }
+        tr:hover { background: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>🔬 Cascade vs Omni Evaluation Comparison</h1>
+
+    <div class="meta">
+        <h2>📊 Overview</h2>
+        <p><strong>Cascade (Multi-Model):</strong> Uses ASR + EMO + AGE + GND + TONE annotations → Qwen API text evaluation</p>
+        <p><strong>Omni (Single-Model):</strong> Qwen Omni directly listens to audio for evaluation</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-value">2.95</div>
+            <div class="stat-label">Cascade Avg Score</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">4.50</div>
+            <div class="stat-label">Omni Avg Score</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value positive">+1.55</div>
+            <div class="stat-label">Average Deviation</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0.067</div>
+            <div class="stat-label">Correlation (r)</div>
+        </div>
+    </div>
+
+    <h2>📈 Comparison Charts</h2>
+
+    <div class="chart">
+        <h3>Category-wise Comparison</h3>
+        <img src="comparison_by_category.png" alt="Category Comparison">
+    </div>
+
+    <div class="chart">
+        <h3>Overall Ranking Comparison</h3>
+        <img src="ranking_comparison.png" alt="Ranking Comparison">
+    </div>
+
+    <div class="chart">
+        <h3>Correlation Scatter Plot</h3>
+        <img src="correlation_scatter.png" alt="Correlation">
+    </div>
+
+    <div class="chart">
+        <h3>Deviation Heatmap</h3>
+        <img src="deviation_heatmap.png" alt="Deviation Heatmap">
+    </div>
+
+    <div class="chart">
+        <h3>Bias by Model</h3>
+        <img src="bias_by_model.png" alt="Bias by Model">
+    </div>
+
+    <h2>📋 Detailed Statistics</h2>
+
+    <h3>Category Analysis</h3>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Cascade Avg</th>
+            <th>Omni Avg</th>
+            <th>Deviation</th>
+            <th>Interpretation</th>
+        </tr>
+
+        <tr>
+            <td><strong>AGE</strong></td>
+            <td>3.18</td>
+            <td>4.30</td>
+            <td class="positive">+1.12</td>
+            <td>Omni higher</td>
+        </tr>
+
+        <tr>
+            <td><strong>EMOTION</strong></td>
+            <td>3.05</td>
+            <td>4.76</td>
+            <td class="positive">+1.71</td>
+            <td>Omni higher</td>
+        </tr>
+
+        <tr>
+            <td><strong>GENDER</strong></td>
+            <td>3.03</td>
+            <td>4.18</td>
+            <td class="positive">+1.15</td>
+            <td>Omni higher</td>
+        </tr>
+
+        <tr>
+            <td><strong>SARCASM</strong></td>
+            <td>2.54</td>
+            <td>4.75</td>
+            <td class="positive">+2.21</td>
+            <td>Omni higher</td>
+        </tr>
+
+    </table>
+
+    <h3>Model Analysis</h3>
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Cascade Avg</th>
+            <th>Omni Avg</th>
+            <th>Deviation</th>
+            <th>Tendency</th>
+        </tr>
+
+        <tr>
+            <td><strong>glm4</strong></td>
+            <td>2.64</td>
+            <td>4.31</td>
+            <td class="positive">+1.67</td>
+            <td>Over-rated by Omni</td>
+        </tr>
+
+        <tr>
+            <td><strong>gpt-4o-voice-mode</strong></td>
+            <td>3.12</td>
+            <td>4.72</td>
+            <td class="positive">+1.60</td>
+            <td>Over-rated by Omni</td>
+        </tr>
+
+        <tr>
+            <td><strong>llamaomni2</strong></td>
+            <td>2.62</td>
+            <td>4.26</td>
+            <td class="positive">+1.63</td>
+            <td>Over-rated by Omni</td>
+        </tr>
+
+        <tr>
+            <td><strong>original</strong></td>
+            <td>2.73</td>
+            <td>4.48</td>
+            <td class="positive">+1.75</td>
+            <td>Over-rated by Omni</td>
+        </tr>
+
+        <tr>
+            <td><strong>qwen2.5</strong></td>
+            <td>3.25</td>
+            <td>4.69</td>
+            <td class="positive">+1.44</td>
+            <td>Over-rated by Omni</td>
+        </tr>
+
+        <tr>
+            <td><strong>rl_real_all</strong></td>
+            <td>3.34</td>
+            <td>4.53</td>
+            <td class="positive">+1.18</td>
+            <td>Over-rated by Omni</td>
+        </tr>
+
+    </table>
+
+    <h2>🔍 Key Findings</h2>
+    <div class="meta">
+        <ul>
+            <li><strong>Correlation:</strong> The two evaluation methods show a correlation coefficient of 0.067.</li>
+            <li><strong>Omni tends to rate higher:</strong> The single-model (Omni) approach generally gives higher scores.</li>
+            <li><strong>Sarcasm category:</strong> Shows the most significant deviation between the two methods.</li>
+            <li><strong>Possible reason:</strong> Omni directly hears the audio and can capture subtle tone cues that text-based Cascade might miss.</li>
+        </ul>
+    </div>
+</body>
+</html>

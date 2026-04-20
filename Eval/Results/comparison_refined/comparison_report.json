@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "Cascade vs Omni Evaluation Comparison Report",
+    "description": "Comparing multi-model collaborative evaluation vs single-model (Qwen Omni) evaluation"
+  },
+  "correlation": {
+    "pearson_r": 0.0351,
+    "interpretation": "Weak correlation"
+  },
+  "overall_findings": {
+    "cascade_avg": 2.804,
+    "omni_avg": 4.475,
+    "avg_deviation": 1.671,
+    "deviation_std": 0.722
+  },
+  "category_analysis": {
+    "age": {
+      "cascade_avg": 3.133,
+      "omni_avg": 4.367,
+      "avg_deviation": 1.233,
+      "max_deviation_model": "llamaomni2"
+    },
+    "emotion": {
+      "cascade_avg": 2.717,
+      "omni_avg": 4.767,
+      "avg_deviation": 2.05,
+      "max_deviation_model": "original"
+    },
+    "sarcasm": {
+      "cascade_avg": 2.333,
+      "omni_avg": 4.583,
+      "avg_deviation": 2.25,
+      "max_deviation_model": "glm4"
+    },
+    "gender": {
+      "cascade_avg": 3.033,
+      "omni_avg": 4.183,
+      "avg_deviation": 1.15,
+      "max_deviation_model": "original"
+    }
+  },
+  "model_analysis": {
+    "glm4": {
+      "cascade_avg": 2.537,
+      "omni_avg": 4.3,
+      "avg_deviation": 1.762,
+      "tendency": "Over-rated by Omni"
+    },
+    "gpt-4o-voice-mode": {
+      "cascade_avg": 2.925,
+      "omni_avg": 4.725,
+      "avg_deviation": 1.8,
+      "tendency": "Over-rated by Omni"
+    },
+    "llamaomni2": {
+      "cascade_avg": 2.45,
+      "omni_avg": 4.312,
+      "avg_deviation": 1.863,
+      "tendency": "Over-rated by Omni"
+    },
+    "original": {
+      "cascade_avg": 2.625,
+      "omni_avg": 4.438,
+      "avg_deviation": 1.812,
+      "tendency": "Over-rated by Omni"
+    },
+    "qwen2.5": {
+      "cascade_avg": 2.988,
+      "omni_avg": 4.75,
+      "avg_deviation": 1.763,
+      "tendency": "Over-rated by Omni"
+    },
+    "rl_real_all": {
+      "cascade_avg": 3.3,
+      "omni_avg": 4.325,
+      "avg_deviation": 1.025,
+      "tendency": "Over-rated by Omni"
+    }
+  },
+  "bias_summary": {}
+}

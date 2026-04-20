@@ -1,0 +1,121 @@
+{
+  "file": "04-24-22-59_18_happy.json",
+  "category": "emotion",
+  "label": "happy",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "My friend got a promotion and now they'll be moving overseas.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "Wow, that's exciting news. Moving overseas is a big step, but it can also be a fantastic opportunity. How are they feeling about it?",
+        "tone": "The audio features a male speaker. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a steady pace. There are no noticeable breaks or hesitations in the speech. The speaker's tone is generally calm and measured, with a slight upward inflection at the end of some phrases, suggesting a question or seeking confirmation. The speaker's voice sounds relatively young.",
+        "model": "glm4"
+      },
+      "raw_response": "The agent correctly acknowledges the user's statement with appropriate content, but does not address the neutral emotion or potential sarcasm. The tone is generally suitable, but lacks depth in empathy. The speaking style is consistent and natural.\n\nThe reason is \"Appropriate content, but no clear emotional or sarcastic response; tone is neutral and suitable but lacks deeper empathy.\"; The score is 3.",
+      "reason": "\"Appropriate content, but no clear emotional or sarcastic response; tone is neutral and suitable but lacks deeper empathy.\"",
+      "score": 3
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "My friend got a promotion and now they'll be moving overseas.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "That's wonderful news for your friend. It must be an exciting opportunity, though it might come with its own mix of emotions and adjustments. How are you feeling about their move?",
+        "tone": "The audio features a male speaker. The speech is clear and easily understandable. The speaker's voice has a moderate volume and a relatively even pace. There are no noticeable breaks or hesitations in the speech. The speaker's tone is generally calm and measured, with a slight upward inflection at the end of some phrases, suggesting a question or seeking confirmation. There are no obvious signs of strong emotion, such as excitement, anger, or sadness.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent appropriately acknowledges the user's statement with empathy and asks a relevant follow-up question. The tone is calm, respectful, and suitable for a middle-aged male speaker. There is no indication of misunderstanding emotion or sarcasm, as the user's emotion was neutral. The response is natural and maintains a comfortable flow.\n\nThe reason is appropriate response with suitable tone; The score is 5.",
+      "reason": "appropriate response with suitable tone",
+      "score": 5
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "My friend got a promotion and now they'll be moving overseas.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "That's exciting news for your friend, wishing them all the best in their new adventure overseas.",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a relatively even pace. The pitch is generally within a normal range, without significant fluctuations. The volume is moderate, neither particularly loud nor soft. There are no noticeable pauses or hesitations in the speech. The speaker's tone is generally neutral, lacking strong emotional inflections. There are no obvious signs of stress, excitement, or sadness in the voice.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is appropriate in content but lacks emotional nuance and fails to fully align with the user's neutral tone. It is polite but generic, without addressing potential underlying emotions or context.  \nThe reason is generic response; The score is 3.",
+      "reason": "generic response",
+      "score": 3
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "My friend got a promotion and now they'll be moving overseas.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "Wow, that's a big change. Congrats to your friend on the promotion. Moving overseas can be both exciting and challenging. What's the plan for the move?",
+        "tone": "The audio features a male voice. The speaker begins with an expression of surprise, \"Wow,\" followed by a congratulatory remark, \"That's a big change, congrats to your friend on the promotion.\" The speaker then acknowledges the difficulty of moving overseas, \"Moving overseas can be both exciting and challenging.\" Finally, the speaker asks, \"What's the plan for the move?\" The overall tone seems positive and supportive.",
+        "model": "original"
+      },
+      "raw_response": "The agent acknowledges the user's statement with a positive and supportive tone, but there is no clear indication of understanding or responding to the user's neutral emotion or gender/age. The response is appropriate in content but lacks deeper emotional nuance.  \nThe reason is \"Appropriate content but lacks emotional depth and gender/age-specific nuance\"; The score is 3.",
+      "reason": "\"Appropriate content but lacks emotional depth and gender/age-specific nuance\"",
+      "score": 3
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "My friend got a promotion and now they'll be moving overseas.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "That's great news for your friend! Moving overseas for a promotion can be really exciting, but it also comes with its challenges, like adjusting to a new culture and finding a new place to live. Have you thought about how you'll be able to keep in touch with your friend? It can be tough when they're so far away. Well, what are your plans for when your friend moves?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is conversational and inquisitive. The speaker's voice is relatively calm and measured, with a moderate pace. The speaker's pitch is generally within a normal range, with some slight variations in intonation. The speaker's vocal intensity is moderate, without any extreme fluctuations. The speaker's voice sounds confident and composed.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The agent appropriately acknowledges the user's statement with a positive and empathetic tone, showing understanding of the situation. The response is well-structured and relevant, but does not explicitly address or reflect on the user's neutral emotion, age, or gender. The tone is conversational and inquisitive, which fits naturally. However, there is no clear indication that the agent adjusted their approach based on the user's identity.\n\nThe reason is <appropriate content and tone, but no explicit adaptation to user's identity>; The score is 4.",
+      "reason": "<appropriate content and tone, but no explicit adaptation to user's identity>",
+      "score": 4
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "My friend got a promotion and now they'll be moving overseas.",
+        "emotion": "neutral",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "male",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the sentence. The volume is moderate, without any significant fluctuations. There are no noticeable vocal tremors or breaks in the speech. The speaker's voice sounds relatively young."
+      },
+      "agent_info": {
+        "transcription": "That's fantastic news! Congratulations to your friend! Moving overseas is such an exciting adventure. Are you planning to visit them soon?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight pause after the initial greeting. The pitch is relatively stable, with a slight rise at the end of the sentence. The vocal intensity is moderate, without any noticeable strain or weakness. The speaker's voice sounds calm and collected.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent's response is overly focused on describing the tone of the speech rather than addressing the user's content, which makes it feel inauthentic and disconnected. The agent fails to acknowledge the user's statement appropriately or show empathy. The response does not reflect an understanding of the user's emotion, age, or gender, and the speaking style is mismatched.\n\nThe reason is **inappropriate focus on tone description instead of meaningful response**; The score is **1**.",
+      "reason": "The agent's response is overly focused on describing the tone of the speech rather than addressing the user's content, which makes it feel inauthentic and disconnected. The agent fails to acknowledge ",
+      "score": 1
+    }
+  ]
+}

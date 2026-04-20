@@ -1,0 +1,121 @@
+{
+  "file": "04-24-22-59_24_happy.json",
+  "category": "emotion",
+  "label": "happy",
+  "evaluation_results": [
+    {
+      "model": "glm4",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the sentence. The vocal intensity is moderate, without any noticeable strain or tremor. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "You want a friend? You got one. We can chat about anything and everything. I'm here for the laughs, the deep thoughts, and all the random stuff in between. So what's on your mind, my friend?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally upbeat and friendly. There are no apparent signs of distress or negativity in the speaker's voice. The speech rate is moderate, with a natural rhythm. The speaker's pitch is relatively high, and there are some variations in pitch, suggesting a natural and expressive delivery. The speaker's volume is moderate, and there are no significant changes in volume throughout the clip. The speaker's voice sounds confident and assured.",
+        "model": "glm4"
+      },
+      "raw_response": "The reason is mismatched tone and content; the agent's response is overly casual and not relevant to the user's statement. The score is 2.",
+      "reason": "The reason is mismatched tone and content; the agent's response is overly casual and not relevant to the user's statement. The score is",
+      "score": 2
+    },
+    {
+      "model": "gpt-4o-voice-mode",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the sentence. The vocal intensity is moderate, without any noticeable strain or tremor. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's exciting. New menus often mean new dishes and flavors to try. What kind of cuisine does your favorite restaurant serve?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the utterance. The volume is moderate, without any significant fluctuations. There are no noticeable vocal fry or other unusual vocal characteristics.",
+        "model": "gpt-4o-voice-mode"
+      },
+      "raw_response": "The agent appropriately acknowledges the user's statement with a positive and engaging response. The content is relevant and invites further conversation, showing understanding of the user's happiness. However, there is no explicit acknowledgment of the user's emotion, and the tone is neutral rather than empathetic. The speaking style is appropriate but lacks warmth or personalization.\n\nThe reason is <lacks explicit emotional acknowledgment>; The score is 3.",
+      "reason": "<lacks explicit emotional acknowledgment>",
+      "score": 3
+    },
+    {
+      "model": "llamaomni2",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the sentence. The vocal intensity is moderate, without any noticeable strain or tremor. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's great! What's your favorite dish on the new menu?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise in intonation at the end of the utterance. The volume is moderate, without any noticeable fluctuations. There are no apparent vocal tremors or breaks in the speech. The speaker's voice sounds confident and clear.",
+        "model": "llamaomni2"
+      },
+      "raw_response": "The agent's response is content-appropriate and friendly, but it does not address the user's emotion or provide any tone that reflects the user's happiness. The speaking style analysis is irrelevant to the evaluation of conversational fit.  \nThe reason is lack of emotional responsiveness; The score is 2.",
+      "reason": "lack of emotional responsiveness",
+      "score": 2
+    },
+    {
+      "model": "original",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the sentence. The vocal intensity is moderate, without any noticeable strain or tremor. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "Oh, that's exciting! What's new on the menu that's caught your eye?",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally light and conversational. There are no apparent signs of distress or strong emotion in the speaker's voice. The speech rate is moderate, with a few slight pauses between phrases. The pitch is relatively stable, with no significant variations in pitch range. The volume is moderate, without any noticeable changes in loudness. The speaker's voice sounds confident and composed.",
+        "model": "original"
+      },
+      "raw_response": "The agent correctly acknowledges the user's happy emotion and responds with an appropriate, engaging question. The tone is light and conversational, matching the user's upbeat mood. There is no indication of sarcasm, so the response is suitable. The content is natural and invites further conversation.  \nThe reason is <appropriate emotional and content match>; The score is 5.",
+      "reason": "<appropriate emotional and content match>",
+      "score": 5
+    },
+    {
+      "model": "qwen2.5",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the sentence. The vocal intensity is moderate, without any noticeable strain or tremor. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's great! What's on the new menu? I'm really interested to hear about it. You should tell me more so we can talk about it.",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speaker's tone is generally upbeat and positive. The speech rate is moderate, with a slight emphasis on certain words, suggesting a conversational style. The pitch is relatively high, and there are some variations in pitch, indicating a degree of expressiveness. The volume is moderate, with no significant fluctuations. The speaker's voice sounds confident and engaging.",
+        "model": "qwen2.5"
+      },
+      "raw_response": "The reason is the agent responds warmly and appropriately to the user's happy emotion, with an engaging tone that matches the conversation. There is no indication of sarcasm, so it's not a factor. The response is natural and age/gender appropriate.  \nThe score is 5.",
+      "reason": "The reason is the agent responds warmly and appropriately to the user's happy emotion, with an engaging tone that matches the conversation. There is no indication of sarcasm, so it's not a factor. The",
+      "score": 5
+    },
+    {
+      "model": "rl_real_all",
+      "user_info": {
+        "transcription": "My favorite restaurant just got a new menu.",
+        "emotion": "happy",
+        "sarcasm": "unknown",
+        "age": "middle_aged",
+        "gender": "female",
+        "tone": "The audio clip features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch is relatively stable, with a slight rise at the end of the sentence. The vocal intensity is moderate, without any noticeable strain or tremor. The overall tone is conversational and relaxed."
+      },
+      "agent_info": {
+        "transcription": "That's exciting! Have you had a chance to check out the new menu yet? Or is there something you're especially looking forward to trying?",
+        "tone": "The audio features a single speaker. The speaker's voice is clear and easily understandable. The speech rate is moderate, with a slight emphasis on certain words. The pitch varies, with some words spoken at a higher pitch than others. The intensity of the voice is moderate, with no extreme fluctuations. The speaker's voice has a slightly questioning tone, especially at the end of the sentence.",
+        "model": "rl_real_all"
+      },
+      "raw_response": "The agent correctly responds to the user's happy emotion with an enthusiastic and engaging tone. The content is relevant and invites further conversation, fitting naturally. There is no indication of sarcasm, so the response is appropriately neutral. The speaking style is consistent with a friendly, questioning tone that matches the user's age and gender.  \nThe reason is appropriate and empathetic; The score is 5.",
+      "reason": "appropriate and empathetic",
+      "score": 5
+    }
+  ]
+}
